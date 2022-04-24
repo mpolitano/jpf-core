@@ -145,7 +145,7 @@ public class BinTree_pred {
 		for (int i=0; i<=maxLength; i++){
 			switch (Verify.random(0)){
 			case 0:
-				System.out.println("adding...");
+//				System.out.println("adding...");
 				t.add(Verify.getInt(0,scope));
 			}
 			// System.out.println("------ DUMMY ------");
@@ -159,7 +159,7 @@ public class BinTree_pred {
 
 	public static void main(String[] args){
 		testDriver();	
-		System.out.println();
+//		System.out.println();
 	}
 
 }
