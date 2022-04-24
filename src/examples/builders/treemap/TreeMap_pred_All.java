@@ -6,7 +6,7 @@ package builders;
 import gov.nasa.jpf.vm.Verify;
 import gov.nasa.jpf.annotation.FilterField;
 
-public class TreeMap_pred {
+public class TreeMap_pred_All {
 
     private transient Entry root = null;
 
@@ -20,7 +20,7 @@ public class TreeMap_pred {
         size--;
     }
 
-    public TreeMap_pred() {
+    public TreeMap_pred_All() {
     }
 
     public int size() {
@@ -592,73 +592,36 @@ public class TreeMap_pred {
         }
     }
 
+
     public static void testDriver(){
-        int scope=3;
+        int scope=2;
         int maxLength=Verify.getInt(0,scope);
-        TreeMap_pred t = new TreeMap_pred();
+        TreeMap_pred_All t = new TreeMap_pred_All();
         for (int i=0; i<=maxLength; i++){
-            switch (Verify.random(1)){
+            switch (Verify.random(4)){
             case 0:
+                // System.out.println("adding...");
                 t.put(Verify.getInt(0,scope));
             case 1:
+                // System.out.println("rm...");
                 t.remove(Verify.getInt(0,scope));
+            case 2:
+                // System.out.println("size...");
+                t.size();
+            case 3:
+                // System.out.println("contains...");
+                t.containsKey(Verify.getInt(0,scope));
+            case 4:
+                // System.out.println("contains...");
+                t.concreteString(Verify.getInt(0,scope));
             }
+
         }
         t.put(Verify.getInt(0,scope));
     }
 
-    public static void testDriver1(){
-        int scope=3;
-        int maxLength=Verify.getInt(0,scope);
-        TreeMap_pred t = new TreeMap_pred();
-        for (int i=0; i<=maxLength; i++){
-            switch (Verify.random(1)){
-            case 0:
-                t.put(Verify.getInt(0,scope));
-            case 1:
-                t.remove(Verify.getInt(0,scope));
-            }
-        }
-        t.remove(Verify.getInt(0,scope));
-    }
-
-    public static void testDriver2(){
-        int scope=3;
-        int maxLength=Verify.getInt(0,scope);
-        TreeMap_pred t = new TreeMap_pred();
-        for (int i=0; i<=maxLength; i++){
-            switch (Verify.random(1)){
-            case 0:
-                t.put(Verify.getInt(0,scope));
-            case 1:
-                t.remove(Verify.getInt(0,scope));
-            }
-        }
-        t.containsKey(Verify.getInt(0,scope));
-    }
-
-    public static void testDriver3(){
-        int scope=3;
-        int maxLength=Verify.getInt(0,scope);
-        TreeMap_pred t = new TreeMap_pred();
-        for (int i=0; i<=maxLength; i++){
-            switch (Verify.random(1)){
-            case 0:
-                t.put(Verify.getInt(0,scope));
-            case 1:
-                t.remove(Verify.getInt(0,scope));
-            }
-        }
-        t.size();
-
-    }
-
     public static void main(String[] args){
         testDriver();   
-        testDriver1();   
-        testDriver2();   
-        testDriver3();   
-
         System.out.println();
     }
 

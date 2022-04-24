@@ -1,0 +1,8 @@
+target = TreeMap_pred
+
+listener=.listener.SearchStats,.listener.StateSpaceAnalyzer,.listener.StateSpaceDot,
+#filter.ignoreFields=BinTree.value,BinTree.root, BinTree.right,BinTree.root,BinTree.left, BinTree.modCount
+
+coverage.include = TreeMap
+coverage.show_methods = true
+coverage.show_bodies = true

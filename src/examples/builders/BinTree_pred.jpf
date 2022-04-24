@@ -1,8 +1,0 @@
-target = builders.BinTree_pred
-
-listener=.listener.SearchStats,.listener.CoverageAnalyzer
-#filter.ignoreFields=BinTree.value,BinTree.root, BinTree.right,BinTree.root,BinTree.left, BinTree.modCount
-
-coverage.include = builders.BinTree_pred
-coverage.show_methods = true
-coverage.show_bodies = true

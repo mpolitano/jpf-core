@@ -1,0 +1,8 @@
+target = builders.TreeMap_pred
+
+listener=.listener.SearchStats,.listener.CoverageAnalyzer
+
+
+coverage.include = builders.TreeMap_pred
+coverage.show_methods = true
+coverage.show_bodies = false

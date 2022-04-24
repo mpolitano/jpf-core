@@ -1,0 +1,7 @@
+target = TreeList
+
+listener=.listener.CoverageAnalyzer, listener.StateSpaceDot
+
+coverage.include = TreeList
+coverage.show_methods = true
+#coverage.show_bodies = true

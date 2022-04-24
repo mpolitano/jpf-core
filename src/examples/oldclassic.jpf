@@ -1,5 +1,10 @@
-# JPF properties to run the oldclassic example with DeadlockAnalyzer report
+@using statecomparator
 
 target=oldclassic
 
-report.console.property_violation=error,snapshot,trace
+#listener+=;gov.nasa.jpf.listener.VarTracker;gov.nasa.jpf.listener.VarRecorder;
+
+#das.classes.include=oldclassic$*
+#das.fields=data
+#das.data.field=*.count
+#das.data.abstraction=gov.nasa.jpf.example.MyClassDataAbstraction
