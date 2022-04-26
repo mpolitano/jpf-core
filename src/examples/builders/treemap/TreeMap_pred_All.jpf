@@ -1,8 +1,8 @@
-target = builders.TreeMap_pred_All
+target = builders.TreeMapDriverRepOK_all
 
 listener=.listener.SearchStats,.listener.CoverageAnalyzer
 
 
-coverage.include = builders.TreeMap_pred_All
+coverage.include = builders.TreeMap
 coverage.show_methods = true
 coverage.show_bodies = false

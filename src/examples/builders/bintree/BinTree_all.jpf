@@ -1,8 +1,8 @@
-target = builders.BinTree_pred_All
+target = builders.BinTreeDriverRepOK_all
 
 listener=.listener.SearchStats,.listener.CoverageAnalyzer
 
 
-coverage.include = builders.BinTree_pred_All
+coverage.include = builders.BinTree
 coverage.show_methods = true
 coverage.show_bodies = false
