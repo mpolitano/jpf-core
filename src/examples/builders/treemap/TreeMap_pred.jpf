@@ -1,4 +1,4 @@
-target = builders.TreeMapDriverRepOK
+target = builders.treemap..TreeMapDriverRepOK
 
 listener=.listener.SearchStats,.listener.CoverageAnalyzer
 
