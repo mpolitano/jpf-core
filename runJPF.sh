@@ -28,16 +28,16 @@ driver="Schedule_all Schedule"
 runJPF
 
 class=treemap
-driver="TreeMap_All TreeMap"
+driver="TreeMap_pred_All TreeMap_pred"
 runJPF
 
 class=bintree
-driver="BinTree_All BinTree"
+driver="BinTree_all BinTree"
 runJPF
 
 projects="java2/util2"
 class=linkedlist
-driver="LinkedList_all LinkedList"
+driver="LinkedList_All LinkedList"
 runJPF
 
 class=treemap
