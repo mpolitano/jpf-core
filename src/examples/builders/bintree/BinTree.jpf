@@ -1,8 +1,7 @@
-target = builders.TreeMapDriverRepOK
+target = builders.BinTreeDriverRepOK
 
 listener=.listener.SearchStats,.listener.CoverageAnalyzer
 
-
-coverage.include = builders.TreeMap
+coverage.include = builders.BinTree
 coverage.show_methods = true
 coverage.show_bodies = false

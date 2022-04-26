@@ -17,17 +17,17 @@ public class ScheduleDriverRepOK_all {
 		int maxLength=Verify.getInt(0,scope);
 		Schedule l = new Schedule();
 		for (int i=0; i<=maxLength; i++){
-			switch (Verify.random(2)){
+			switch (Verify.random(8)){
 			case 0:
-				System.out.println("adding...");
+				// System.out.println("adding...");
 				l.addProcess(Verify.getInt(0,scope));
 				// assert l.repOK();			
 			case 1:
-				System.out.println("block...");
+				// System.out.println("block...");
 				l.blockProcess();
 				// assert l.repOK();			
 			case 2:
-				System.out.println("quantumExpire...");
+				// System.out.println("quantumExpire...");
 				l.quantumExpire();
 				// assert l.repOK();
 			case 3:
@@ -41,7 +41,19 @@ public class ScheduleDriverRepOK_all {
 			case 5:
 				// System.out.println("adding...");
 				l.upgradeProcessPrio(Verify.getInt(0,scope),Verify.getInt(0,scope));
-				// assert l.repOK();						
+				// assert l.repOK();	
+			case 6:
+				// System.out.println("adding...");
+				l.unblockProcess(Verify.getInt(0,scope));
+				// assert l.repOK();	
+			case 7:
+				// System.out.println("adding...");
+				l.toString();
+				// assert l.repOK();	
+			case 8:
+				// System.out.println("adding...");
+				l.initPrioQueue(Verify.getInt(0,scope),Verify.getInt(0,scope));
+				// assert l.repOK();
 		}
 		}
 		return l;
