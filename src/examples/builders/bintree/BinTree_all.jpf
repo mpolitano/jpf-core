@@ -1,4 +1,4 @@
-target = builders.BinTreeDriverRepOK_all
+target = builders.bintree.BinTreeDriverRepOK_all
 
 listener=.listener.SearchStats,.listener.CoverageAnalyzer
 
