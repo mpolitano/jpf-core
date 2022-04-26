@@ -15,8 +15,9 @@ for p in $projects
 
 function changeScope(){
 	pushd src/examples/
-	find ./ -type f -exec sed -i '' 's/scope=10/scope=2/g' {} \;
+	find ./ -type f -exec sed -i 's/scope=2/scope=5/g' {} \;
 	popd
+	ant
 }
 
 changeScope;
@@ -27,11 +28,11 @@ driver="Schedule_all Schedule"
 runJPF
 
 class=treemap
-driver="TreeMap_pred_all TreeMap_pred"
+driver="TreeMap_All TreeMap"
 runJPF
 
 class=bintree
-driver="BinTree_pred_all BinTree_pred"
+driver="BinTree_All BinTree"
 runJPF
 
 projects="java2/util2"
