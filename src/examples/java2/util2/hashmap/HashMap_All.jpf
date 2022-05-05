@@ -1,11 +1,11 @@
 
-target = java2.util2.LinkedListDriverRepOK
+target = java2.util2.hashmap.HashMapDriverRepOK_All
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
 
 
-coverage.include=*.LinkedList
+coverage.include=*.HashMap
 coverage.show_methods=true
 coverage.show_bodies=false
 search.class = .search.heuristic.BFSHeuristic

@@ -1,5 +1,5 @@
 
-target = java2.util2.treeset.TreeSetDriverRepOK_all
+target = java2.util2.treeset.TreeSetDriverRepOK_All
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot

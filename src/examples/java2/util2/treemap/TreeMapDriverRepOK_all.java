@@ -9,7 +9,7 @@ package java2.util2.treemap;
 
 import gov.nasa.jpf.vm.Verify;
 
-public class TreeMapDriverRepOK_all {
+public class TreeMapDriverRepOK_All {
 
 	private static TreeMap generateStructure(int maxScope) {
 
@@ -17,54 +17,41 @@ public class TreeMapDriverRepOK_all {
 		int maxLength=Verify.getInt(0,scope);
 		TreeMap l = new TreeMap();
 		for (int i=0; i<=maxLength; i++){
-			switch (Verify.random(7)){
-			case 0:
-				// System.out.println("adding...");
-				l.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-				// assert l.repOK();
-			case 1:
-				// System.out.println("adding...");
-				l.containsKey(Verify.getInt(0,scope));
-				// assert l.repOK();		
-			case 2:
-				// System.out.println("adding...");
-				l.size();
-				// assert l.repOK();		
-			case 3:
-				// System.out.println("adding...");
-				l.containsValue(Verify.getInt(0,scope));
-				// assert l.repOK();		
-			case 4:
-				// System.out.println("adding...");
-				l.get(Verify.getInt(0,scope));
-				// assert l.repOK();		
-			case 5:
-				// System.out.println("adding...");
-				l.firstKey();
-				// assert l.repOK();		
-			case 6:
-				// System.out.println("adding...");
-				l.remove(Verify.getInt(0,scope));
-				// assert l.repOK();		
-			case 7:
-				// System.out.println("adding...");
-				l.clear();
-				// assert l.repOK();	
-			
+			try{
+
+				switch (Verify.random(7)){
+					case 0:
+						l.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
+					case 1:
+						l.containsKey(Verify.getInt(0,scope));
+					case 2:
+						l.size();
+					case 3:
+						l.containsValue(Verify.getInt(0,scope));
+					case 4:
+						l.get(Verify.getInt(0,scope));
+					case 5:
+						l.firstKey();
+					case 6:
+						l.remove(Verify.getInt(0,scope));
+					case 7:
+						l.clear();
+				}
+			}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 			}
+		
 		}
 		return l;
 	}
 
 	public static void main(String[] args) {
 		int scope=2;
-		try {
 			TreeMap tree= generateStructure(scope);
-			// System.out.println("struc...");
-			// System.out.println(tree);
-		
-			tree.repOK();
-		} catch (Exception e) {
+		try {
+			assert tree.repOK();
+			tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
+			tree.remove(Verify.getInt(0,scope));
+		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 		}
 		
 	}

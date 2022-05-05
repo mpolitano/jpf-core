@@ -17,25 +17,32 @@ public class LinkedListDriverRepOK {
 		int maxLength=Verify.getInt(0,scope);
 		LinkedList l = new LinkedList();
 		for (int i=0; i<=maxLength; i++){
-			switch (Verify.random(0)){
-			case 0:
-				l.add(Verify.getInt(0,scope));
-				// assert l.repOK();			
-		}
+			try{
+				switch (Verify.random(0)){
+					case 0:
+						l.add(Verify.getInt(0,scope));
+						// assert l.repOK();			
+			
+				}	
+			}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
+
+			}
 		}
 		return l;
 	}
 
 	public static void main(String[] args) {
 		int scope=2;
-				try {
 		LinkedList list= generateStructure(scope);
 		// System.out.println(list);
-	
-			list.repOK();
-		} catch (Exception e) {
+		try{
+			assert list.repOK();
+			list.add(Verify.getInt(0,scope));
+			list.remove(Verify.getInt(0,scope));
+			list.removeFirst();
+		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
+
 		}
-		
 	}
 
 

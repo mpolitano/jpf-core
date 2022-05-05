@@ -1,5 +1,5 @@
 
-target = java2.util2.treemap.TreeMapDriverRepOK_all
+target = java2.util2.treemap.TreeMapDriverRepOK_All
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot

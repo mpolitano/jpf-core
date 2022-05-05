@@ -34,7 +34,7 @@ public class TreeMapDriverRepOK_all {
     public static void main(String[] args){
         int scope=2;
         TreeMap t = generatedStruct(scope);   
-        t.repOK();
+        assert t.repOK();
         // System.out.println();
     }
 }
