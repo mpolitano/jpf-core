@@ -10,7 +10,7 @@ package java2.util2.hashmap;
 
 import gov.nasa.jpf.vm.Verify;
 
-public class HashMapDriverRepOK {
+public class HashMapDriverRepOK_All {
 
 	private static HashMap generateStructure(int maxScope) {
 
@@ -19,12 +19,20 @@ public class HashMapDriverRepOK {
 		HashMap h = new HashMap();
 		for (int i=0; i<=maxLength; i++){
 			try{	
-				switch (Verify.random(0)){
+				switch (Verify.random(3)){
 					case 0:
-						// System.out.println("adding...");
 						h.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
 						// assert l.repOK();			
-					}
+					case 1:
+						h.remove(Verify.getInt(0,scope));
+						// assert l.repOK();			
+					case 2:
+						h.clear();
+						// assert l.repOK();
+					case 3:
+						h.entrySet();
+						// assert l.repOK();								
+				}
 			}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 			
 			}
