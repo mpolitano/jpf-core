@@ -8,9 +8,10 @@ for p in $projects
 			do
 				for s in $scope 
 				do
-                echo "SCOPE====== "$s >>result.txt
-                changeScope;
-				java -jar build/RunJPF.jar src/examples/$p/$c/$d.jpf > result.txt
+	                echo "SCOPE====== "$s >>result.txt
+	                changeScope;
+					java -jar build/RunJPF.jar src/examples/$p/$c/$d.jpf > result.txt
+				done
 			done
 		done
 	done
