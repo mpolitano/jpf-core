@@ -9,6 +9,8 @@ package java2.util2;
 
 import java.io.*;
 
+//import java2.util2.Map.Entry;
+
 /**
  * Hash table based implementation of the <tt>Map</tt> interface.  This
  * implementation provides all of the optional map operations, and permits
@@ -375,7 +377,7 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
       if (e.hash == hash && eq(k, e.key)) {
         Object oldValue = e.value;
         e.value = value;
-        e.recordAccess(this);
+        // e.recordAccess(this);
         return oldValue;
       }
     }
@@ -537,7 +539,7 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
         size--;
         if (prev == e) table[i] = next;
         else prev.next = next;
-        e.recordRemoval(this);
+        // e.recordRemoval(this);
         return e;
       }
       prev = e;
@@ -569,7 +571,7 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
         size--;
         if (prev == e) table[i] = next;
         else prev.next = next;
-        e.recordRemoval(this);
+        // e.recordRemoval(this);
         return e;
       }
       prev = e;
@@ -692,18 +694,6 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
       return getKey() + "=" + getValue();
     }
 
-    /**
-     * This method is invoked whenever the value in an entry is
-     * overwritten by an invocation of put(k,v) for a key k that's already
-     * in the HashMap.
-     */
-    void recordAccess(HashMap m) {}
-
-    /**
-     * This method is invoked whenever the entry is
-     * removed from the table.
-     */
-    void recordRemoval(HashMap m) {}
   }
 
   /**
@@ -995,4 +985,42 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
   float loadFactor() {
     return loadFactor;
   }
+  
+  @Override
+  public String toString() {
+	  StringBuilder buf = new StringBuilder();
+	  buf.append("{");
+
+	  List sorted = new ArrayList(keySet());
+	  
+	  boolean firstNull = false;
+	  if (sorted.remove(null)) {
+		  Object key = null;
+		  Object value = get(key);
+		  buf.append((key == this ? "(this Map)" : key) + "=" + (value == this ? "(this Map)" : value));
+		  firstNull = true;
+	  }
+	  
+	  Collections.sort(sorted);
+	  
+	  Iterator i = sorted.iterator();
+	  boolean hasNext = i.hasNext();
+	  while (hasNext) {
+		  if (firstNull) {
+			  buf.append(", ");
+			  firstNull = false;
+		  }
+		  
+		  Object key = i.next();
+		  Object value = get(key);
+		  buf.append((key == this ? "(this Map)" : key) + "=" + (value == this ? "(this Map)" : value));
+
+		  hasNext = i.hasNext();
+		  if (hasNext) buf.append(", ");
+	  }
+
+	  buf.append("}");
+	  return buf.toString();
+  }
+  
 }
