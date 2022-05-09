@@ -56,12 +56,12 @@ public class HashMapDriverRepOK_All {
 		int scope=2;
 
 		HashMap tree= generateStructure(scope);
-		try {		
+		// try {		
 			// assert tree.repOK();
 			tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
 			tree.remove(Verify.getInt(0,scope));
-		} catch (Exception e) {
-		}
+		// } catch (Exception e) {
+		// }
 		
 	}
 
