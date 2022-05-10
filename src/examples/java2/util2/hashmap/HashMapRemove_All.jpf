@@ -1,0 +1,11 @@
+
+target = java2.util2.HashMapDriverRemove_All
+
+
+listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
+
+
+coverage.include=*.HashMap
+coverage.show_methods=true
+coverage.show_bodies=false
+search.class = .search.heuristic.BFSHeuristic
