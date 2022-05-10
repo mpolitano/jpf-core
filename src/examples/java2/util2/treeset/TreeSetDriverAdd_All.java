@@ -45,7 +45,7 @@ public class TreeSetDriverAdd_All {
  						break;
 				}
 
-     		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
+     		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException|java.lang.IllegalArgumentException e){
 			}
 		
 		}

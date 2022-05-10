@@ -54,7 +54,7 @@ public class TreeMapDriverAdd_All {
 						l.tailMap(Verify.getInt(0,scope));
 						break;
 				}
-     		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
+     		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException|java.lang.IllegalArgumentException e){
 			}
 		
 		}
