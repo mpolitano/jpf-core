@@ -10,7 +10,7 @@ for p in $projects
 				do
 					echo "========== SCOPE $s =================" >> result.txt
 	                changeScope $s
-	                va -jar build/RunJPF.jar src/examples/$p/$c/$d.jpf >> result.txt
+	                java -jar build/RunJPF.jar src/examples/$p/$c/$d.jpf >> result.txt
 				done
 			done
 		done
