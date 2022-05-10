@@ -25,7 +25,7 @@ function changeScope(){
 	ant
 }
 
-scope="1"
+scope="2 3 4 5 6"
 # class=$3
 # driver=$4
 # projects=$2
