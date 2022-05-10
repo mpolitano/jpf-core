@@ -8,9 +8,8 @@ for p in $projects
 			do
 				for s in $scope 
 				do
-	                echo "SCOPE====== "$s >>result.txt
-	                changeScope;
-					java -jar build/RunJPF.jar src/examples/$p/$c/$d.jpf > result.txt
+	                changeScope $s
+	                va -jar build/RunJPF.jar src/examples/$p/$c/$d.jpf > result.txt
 				done
 			done
 		done
@@ -20,12 +19,12 @@ for p in $projects
 
 function changeScope(){
 	pushd src/examples/
-        find ./ -type f -exec sed -i 's/\bscope=[0-9]/scope='$scope'/g' {} \;
+        find ./ -type f -exec sed -i 's/\bscope=[0-9]/scope='$1'/g' {} \;
     popd
 	ant
 }
 
-scope="1 2 3 4 5 6 7 8 9 10"
+scope="2 3 4 5 6"
 class=$3
 driver=$4
 projects=$2
@@ -46,17 +45,18 @@ driver="BinTree_all BinTree"
 projects="java2/util2"
 class=linkedlist
 driver="LinkedList_All LinkedList"
-runJPF
+# runJPF
 
 class=treemap
-driver="TreeMap_All TreeMap"
+driver="TreeMapAdd_All TreeMapRemove_All TreeMapAdd TreeMapRemove"
 runJPF
 
 class=treeset
 driver="TreeSet_All TreeSet"
-runJPF
+# runJPF
 
 
 class=hashmap
-driver="HashMap_All HashMap"
-#runJPF
+driver="HashMap_All
+ HashMap"
+# runJPF
