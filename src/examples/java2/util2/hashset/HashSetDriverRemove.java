@@ -24,6 +24,7 @@ public class HashSetDriverRemove {
           case 0:
             h.add(Verify.getInt(0,scope));
             // assert l.repOK();      
+            break;
 
         }
       }catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){

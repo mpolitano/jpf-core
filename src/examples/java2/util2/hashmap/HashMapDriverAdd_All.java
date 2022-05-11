@@ -68,7 +68,6 @@ public class HashMapDriverAdd_All {
 		// try {		
 			// assert tree.repOK();
 			tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-			tree.remove(Verify.getInt(0,scope));
 		// } catch (Exception e) {
 		// }
 		

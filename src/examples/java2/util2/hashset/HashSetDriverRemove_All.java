@@ -23,16 +23,19 @@ public class HashSetDriverRemove_All {
         switch (Verify.random(3)){
           case 0:
             h.add(Verify.getInt(0,scope));
-            // assert l.repOK();      
+            // assert l.repOK();    
+            break;
           case 1:
             h.remove(Verify.getInt(0,scope));
             // assert l.repOK();      
+            break;
           case 2:
             h.clear();
             // assert l.repOK();
+            break;
           case 3:
             h.contains(Verify.getInt(0,scope));
-
+            break;
         }
       }catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
       
