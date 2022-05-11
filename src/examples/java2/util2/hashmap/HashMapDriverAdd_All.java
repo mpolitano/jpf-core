@@ -23,27 +23,35 @@ public class HashMapDriverAdd_All {
 				switch (Verify.random(7)){
 					case 0:
 						h.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
+						break;
 						// assert l.repOK();			
 					case 1:
 						h.remove(Verify.getInt(0,scope));
+						break;
 						// assert l.repOK();			
 					case 2:
 						h.clear();
+						break;
 						// assert l.repOK();
 					case 3:
 						h.entrySet();
+						break;
 						// assert l.repOK();	
 					case 4:
 						h.values();
+						break;
 						// assert l.repOK();
 					case 5:
 						h.keySet();
+						break;
 						// assert l.repOK();
 					case 6:
 						h.containsValue(Verify.getInt(0,scope));
+						break;
 						// assert l.repOK();
 					case 7:
 						h.containsKey(Verify.getInt(0,scope));
+						break;
 
 				}
      		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
