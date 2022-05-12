@@ -5,8 +5,9 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.hashset;
 import java2.util2.*;
+import java2.util2.hashmap.HashMap;
 
 /**
  * This class implements the <tt>Set</tt> interface, backed by a hash table
@@ -252,26 +253,26 @@ public class HashSet extends AbstractSet implements Set, Cloneable, java.io.Seri
    * Reconstitute the <tt>HashSet</tt> instance from a stream (that is,
    * deserialize it).
    */
-  private void readObject(java.io.ObjectInputStream s)
-      throws java.io.IOException, ClassNotFoundException {
-    // Read in any hidden serialization magic
-    s.defaultReadObject();
-
-    // Read in HashMap capacity and load factor and create backing HashMap
-    int capacity = s.readInt();
-    float loadFactor = s.readFloat();
-    map =
-        (this instanceof LinkedHashSet
-            ? new LinkedHashMap(capacity, loadFactor)
-            : new HashMap(capacity, loadFactor));
-
-    // Read in size
-    int size = s.readInt();
+//  private void readObject(java.io.ObjectInputStream s)
+//      throws java.io.IOException, ClassNotFoundException {
+//    // Read in any hidden serialization magic
+//    s.defaultReadObject();
+//
+//    // Read in HashMap capacity and load factor and create backing HashMap
+//    int capacity = s.readInt();
+//    float loadFactor = s.readFloat();
+//    map =
+//        (this instanceof LinkedHashSet
+//            ? new LinkedHashMap(capacity, loadFactor)
+//            : new HashMap(capacity, loadFactor));
+//
+//    // Read in size
+//    int size = s.readInt();
 
     // Read in all elements in the proper order.
-    for (int i = 0; i < size; i++) {
-      Object e = s.readObject();
-      map.put(e, PRESENT);
-    }
-  }
+//    for (int i = 0; i < size; i++) {
+//      Object e = s.readObject();
+//      map.put(e, PRESENT);
+//    }
+//  }
 }

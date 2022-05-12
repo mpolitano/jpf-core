@@ -5,7 +5,7 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.treemap;
 
 import gov.nasa.jpf.vm.Verify;
 import java2.util2.*;
@@ -18,16 +18,20 @@ public class TreeMapDriverRemove {
 		TreeMap l = new TreeMap();
 		for (int i=0; i<=maxLength; i++){
 			try{
-				switch (Verify.random(0)){
+				switch (Verify.random(1)){
 					case 0:
 						l.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
 						break;
+					case 1:
+						l.remove(Verify.getInt(0,scope));		
+						break;
 				}
 			}catch(java2.util2.NoSuchElementException|java.util.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
-			}
+		}
 		}
 		return l;
 	}
+
 
 	public static void main(String[] args) {
 		int scope=3;

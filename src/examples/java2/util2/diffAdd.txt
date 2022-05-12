@@ -1,0 +1,17 @@
+Object extensions: 
+canonicalizer.DummyHeapRoot.theroot = canonicalizer.DummyHeapRoot:0->[java2.util2.TreeSet:0] , 
+java2.util2.TreeMap.BLACK = java2.util2.TreeMap:0->[true] , 
+java2.util2.TreeMap.RED = java2.util2.TreeMap:0->[false] , 
+java2.util2.TreeMap.comparator = java2.util2.TreeMap:0->[null] , 
+java2.util2.TreeMap.entrySet = java2.util2.TreeMap:0->[null] , 
+java2.util2.TreeMap.keySet = java2.util2.TreeMap:0->[java2.util2.TreeMap$1:0] , 
+java2.util2.TreeMap.root = java2.util2.TreeMap:0->[java2.util2.TreeMap$Entry:0] , 
+java2.util2.TreeMap.serialVersionUID = java2.util2.TreeMap:0->[919286545866124006] , 
+java2.util2.TreeMap.size = java2.util2.TreeMap:0->[2] , 
+java2.util2.TreeMap.values = java2.util2.TreeMap:0->[null] , 
+java2.util2.TreeSet.PRESENT = java2.util2.TreeSet:0->[java.lang.Object:0] , 
+java2.util2.TreeSet.keySet = java2.util2.TreeSet:0->[java2.util2.TreeMap$1:0] , 
+java2.util2.TreeSet.m = java2.util2.TreeSet:0->[java2.util2.TreeMap:0] , 
+java2.util2.TreeSet.serialVersionUID = java2.util2.TreeSet:0->[-2479143000061671589] , 
+
+---

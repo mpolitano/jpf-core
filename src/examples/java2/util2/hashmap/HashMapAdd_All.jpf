@@ -1,4 +1,4 @@
-target = java2.util2.HashMapDriverAdd_All
+target = java2.util2.hashmap.HashMapDriverAdd_All
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot

@@ -5,7 +5,7 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.treemap;
 
 import gov.nasa.jpf.vm.Verify;
 import java2.util2.*;
@@ -62,7 +62,7 @@ public class TreeMapDriverAdd_All {
 	}
 
 	public static void main(String[] args) {
-		int scope=3;
+		int scope=1;
 			TreeMap tree= generateStructure(scope);
 			tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
 			// assert tree.repOK();

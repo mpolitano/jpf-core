@@ -329,8 +329,8 @@ public abstract class AbstractMap implements Map {
    * appropriate view the first time this view is requested.  The views are
    * stateless, so there's no reason to create more than one of each.
    */
-  transient volatile Set keySet = null;
-  transient volatile Collection values = null;
+  public transient volatile Set keySet = null;
+  public transient volatile Collection values = null;
 
   /**
    * Returns a Set view of the keys contained in this map.  The Set is

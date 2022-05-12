@@ -5,7 +5,7 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2.treemap;
+package java2.util2.treeset;
 import java2.util2.*;
 /**
  * Red-Black tree based implementation of the <tt>SortedMap</tt> interface.

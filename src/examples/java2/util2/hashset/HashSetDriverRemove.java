@@ -6,7 +6,7 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.hashset;
 
 import gov.nasa.jpf.vm.Verify;
 import java2.util2.*;

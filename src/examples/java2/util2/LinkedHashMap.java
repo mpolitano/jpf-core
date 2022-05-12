@@ -9,6 +9,8 @@ package java2.util2;
 
 import java.io.*;
 
+import java2.util2.hashmap.HashMap;
+
 /**
  * <p>Hash table and linked list implementation of the <tt>Map</tt> interface,
  * with predictable iteration order.  This implementation differs from

@@ -1,5 +1,5 @@
 
-target = java2.util2.LinkedListDriverAdd_All
+target = java2.util2.linkedlist.LinkedListDriverAdd_All
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot

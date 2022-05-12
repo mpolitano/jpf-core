@@ -1,5 +1,5 @@
 
-target = java2.util2.TreeMapDriverRemove
+target = java2.util2.treemap.TreeMapDriverRemove
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot

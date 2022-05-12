@@ -1,10 +1,10 @@
 
-target = java2.util2.TreeSetDriverRemove_All
+target = java2.util2.treeset.TreeSetDriverRemove_All
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
 
 
-coverage.include=*.TreeSet
+coverage.include=*.TreeSet,*.TreeMap
 coverage.show_methods=true
 search.class = .search.heuristic.BFSHeuristic

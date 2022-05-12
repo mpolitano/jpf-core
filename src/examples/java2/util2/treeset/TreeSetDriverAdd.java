@@ -5,7 +5,7 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.treeset;
 
 import gov.nasa.jpf.vm.Verify;
 import java2.util2.*;
@@ -33,7 +33,7 @@ public class TreeSetDriverAdd {
 	}
 
 	public static void main(String[] args) {
-		int scope=2;
+		int scope=1;
 
 		TreeSet tree= generateStructure(scope);
 		tree.add(Verify.getInt(0,scope));

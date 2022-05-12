@@ -1,5 +1,5 @@
 
-target = java2.util2.LinkedListDriverRemove
+target = java2.util2.linkedlist.LinkedListDriverRemove
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot

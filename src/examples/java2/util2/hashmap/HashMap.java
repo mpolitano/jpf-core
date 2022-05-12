@@ -5,7 +5,7 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.hashmap;
 
 import java.io.*;
 import java2.util2.*;
@@ -644,16 +644,16 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
     return result;
   }
 
-  static class Entry implements Map.Entry {
+  public static class Entry implements Map.Entry {
     final Object key;
-    Object value;
+    public Object value;
     final int hash;
     Entry next;
 
     /**
      * Create new entry.
      */
-    Entry(int h, Object k, Object v, Entry n) {
+    protected Entry(int h, Object k, Object v, Entry n) {
       value = v;
       next = n;
       key = k;
@@ -979,11 +979,11 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
   }
 
   // These methods are used when serializing HashSets
-  int capacity() {
+  public int capacity() {
     return table.length;
   }
 
-  float loadFactor() {
+  public float loadFactor() {
     return loadFactor;
   }
   

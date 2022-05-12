@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package java2.util2;
+package java2.util2.linkedlist;
 
 
 import gov.nasa.jpf.vm.Verify;

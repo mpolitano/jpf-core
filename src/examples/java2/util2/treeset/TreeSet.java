@@ -5,9 +5,8 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.treeset;
 import java2.util2.*;
-
 /**
  * This class implements the <tt>Set</tt> interface, backed by a
  * <tt>TreeMap</tt> instance.  This class guarantees that the sorted set will

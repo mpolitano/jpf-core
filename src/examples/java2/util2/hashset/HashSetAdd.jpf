@@ -1,11 +1,11 @@
 
-target = java2.util2.HashSetDriverAdd
+target = java2.util2.hashset.HashSetDriverAdd
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
 
 
-coverage.include=*.HashSet
+coverage.include=*.HashSet,*.HashMap
 coverage.show_methods=true
 coverage.show_bodies=false
 search.class = .search.heuristic.BFSHeuristic

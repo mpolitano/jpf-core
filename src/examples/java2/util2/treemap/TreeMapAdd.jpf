@@ -1,11 +1,13 @@
 
-target = java2.util2.TreeMapDriverAdd
+target = java2.util2.treemap.TreeMapDriverAdd
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
 
 
-coverage.include=*.TreeMap
+coverage.include=*.TreeMap,*.TreeSet
 coverage.show_methods=true
 coverage.show_bodies=false
+coverage.loaded_only=true
 search.class = .search.heuristic.BFSHeuristic
+coverage.methods=true

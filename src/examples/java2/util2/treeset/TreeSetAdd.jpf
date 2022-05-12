@@ -1,10 +1,10 @@
 
-target = java2.util2.TreeSetDriverAdd
+target = java2.util2.treeset.TreeSetDriverAdd
 
 
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
 
 
-coverage.include=*.TreeSet
+coverage.include=*.TreeSet,*.TreeMap
 coverage.show_methods=true
 search.class = .search.heuristic.BFSHeuristic
