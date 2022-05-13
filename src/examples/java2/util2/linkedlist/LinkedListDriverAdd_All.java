@@ -17,7 +17,7 @@ public class LinkedListDriverAdd_All {
 		int scope=maxScope;
 		int maxLength=Verify.getInt(0,scope);
 		LinkedList l = new LinkedList();
-		for (int i=0; i<=maxLength; i++){
+		for (int i=1; i<=maxLength; i++){
 			try{
 				switch (Verify.random(7)){
 					case 0:
@@ -70,7 +70,7 @@ public class LinkedListDriverAdd_All {
 	}
 
 	public static void main(String[] args) {
-		int scope=2;
+		int scope=1;
 		LinkedList list= generateStructure(scope);
 		list.add(Verify.getInt(0,scope));		
 		assert list.repOK();

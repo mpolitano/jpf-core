@@ -5,7 +5,8 @@ target = java2.util2.linkedlist.LinkedListDriverRemove
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
 
 
-coverage.include=*.LinkedList
+coverage.include=*.LinkedList,java2.util2.NoSuchElementException
 coverage.show_methods=true
 coverage.show_bodies=false
 search.class = .search.heuristic.BFSHeuristic
+methods.include=java2.util2.NoSuchElementException.<init>,java2.util2.linkedlist.LinkedList.remove,java2.util2.linkedlist.LinkedList.<init>

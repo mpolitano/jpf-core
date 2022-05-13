@@ -16,7 +16,7 @@ public class TreeMapDriverAdd_All {
 		int scope=maxScope;
 		int maxLength=Verify.getInt(0,scope);
 		TreeMap l = new TreeMap();
-		for (int i=0; i<=maxLength; i++){
+		for (int i=1; i<=maxLength; i++){
 			try{
 
 				switch (Verify.random(10)){

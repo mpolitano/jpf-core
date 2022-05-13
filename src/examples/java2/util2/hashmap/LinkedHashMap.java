@@ -5,11 +5,17 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.hashmap;
 
 import java.io.*;
 
-import java2.util2.hashmap.HashMap;
+import java2.util2.Collection;
+import java2.util2.ConcurrentModificationException;
+import java2.util2.Hashtable;
+import java2.util2.Iterator;
+import java2.util2.Map;
+import java2.util2.NoSuchElementException;
+import java2.util2.Map.Entry;
 
 /**
  * <p>Hash table and linked list implementation of the <tt>Map</tt> interface,

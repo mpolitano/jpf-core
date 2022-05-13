@@ -18,7 +18,7 @@ public class HashSetDriverAdd {
     int scope=maxScope;
     int maxLength=Verify.getInt(0,scope);
     HashSet h = new HashSet();
-    for (int i=0; i<=maxLength; i++){
+    for (int i=1; i<=maxLength; i++){
       try{  
         switch (Verify.random(0)){
           case 0:
@@ -35,7 +35,7 @@ public class HashSetDriverAdd {
   }
 
   public static void main(String[] args) {
-    int scope=2;
+    int scope=1;
 
     HashSet tree= generateStructure(scope);
     // assert tree.repOK();

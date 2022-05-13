@@ -19,13 +19,14 @@ for p in $projects
 
 
 function changeScope(){
-	pushd src/examples/
+	#Warning;
+	pushd src/examples/java2/util2/
         find ./ -type f -exec sed -i 's/\bscope=[0-9]/scope='$1'/g' {} \;
     popd
 	ant
 }
 
-scope="2 3 4 5 6"
+scope="1"
 # class=$3
 # driver=$4
 # projects=$2
@@ -45,21 +46,21 @@ driver="BinTree_all BinTree"
 
 projects="java2/util2"
 class=linkedlist
-driver="LinkedListAdd_All LinkedListAdd LinkedListRemove_All LinkedListRemove"
+driver="LinkedListAdd_All LinkedListRemove_All LinkedListAdd LinkedListRemove"
 runJPF
 
 class=treemap
-driver="TreeMapAdd_All TreeMapAdd TreeMapRemove_All TreeMapRemove"
+driver="TreeMapAdd_All  TreeMapRemove_All TreeMapAdd TreeMapRemove"
 runJPF
 
 class=treeset
-driver="TreeSetAdd_All TreeSetAdd TreeSetRemove_All TreeSetRemove"
+driver="TreeSetAdd_All  TreeSetRemove_All TreeSetAdd TreeSetRemove"
 runJPF
 
 class=hashmap
-driver="HashMapAdd_All HashMapAdd HashMapRemove_All HashMapRemove"
+driver="HashMapAdd_All  HashMapRemove_All HashMapAdd HashMapRemove"
 runJPF
 
 class=hashset
-driver="HashSetAdd_All HashSetAdd HashSetRemove_All HashSetRemove"
+driver="HashSetAdd_All  HashSetRemove_All HashSetAdd HashSetRemove"
 runJPF

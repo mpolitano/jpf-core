@@ -1435,7 +1435,7 @@ public class TreeMap extends AbstractMap implements SortedMap, Cloneable, java.i
   }
 
   /** Intended to be called only from TreeSet.addAll **/
-  void addAllForTreeSet(SortedSet set, Object defaultVal) {
+  public void addAllForTreeSet(SortedSet set, Object defaultVal) {
     try {
       buildFromSorted(set.size(), set.iterator(), null, defaultVal);
     } catch (java.io.IOException cannotHappen) {

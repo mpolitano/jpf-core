@@ -17,7 +17,7 @@ public class TreeMapDriverRemove_All {
 		int scope=maxScope;
 		int maxLength=Verify.getInt(0,scope);
 		TreeMap l = new TreeMap();
-		for (int i=0; i<=maxLength; i++){
+		for (int i=1; i<=maxLength; i++){
 			try{
 
 				switch (Verify.random(10)){
@@ -62,7 +62,7 @@ public class TreeMapDriverRemove_All {
 	}
 
 	public static void main(String[] args) {
-		int scope=3;
+		int scope=1;
 		TreeMap tree= generateStructure(scope);
 		try {
 			tree.remove(Verify.getInt(0,scope));

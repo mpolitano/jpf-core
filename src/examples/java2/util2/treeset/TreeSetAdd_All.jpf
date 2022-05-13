@@ -5,6 +5,7 @@ target = java2.util2.treeset.TreeSetDriverAdd_All
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
 
 
-coverage.include=*.TreeSet
+coverage.include=*.TreeSet,*.TreeMap
 coverage.show_methods=true
 search.class = .search.heuristic.BFSHeuristic
+methods.include=java2.util2.treeset.TreeSet.put,java2.util2.treeset.TreeSet.<init>,java2.util2.treemap.TreeMap.put,java2.util2.treemap.TreeMap.incrementSize,java2.util2.treemap.TreeMap.Entry.Entry,java2.util2.treemap.TreeMap.compare,java2.util2.treemap.TreeMap.Entry.setValue,java2.util2.treemap.TreeMap.fixAfterInsertion,java2.util2.treemap.TreeMap.parentOf,java2.util2.treemap.TreeMap.leftOf,java2.util2.treemap.TreeMap.rightOf,java2.util2.treemap.TreeMap.colorOf,java2.util2.treemap.TreeMap.setColor,java2.util2.treemap.TreeMap.rotateLeft,java2.util2.treemap.TreeMap.rotateRight,java2.util2.treemap.TreeMap.<init>

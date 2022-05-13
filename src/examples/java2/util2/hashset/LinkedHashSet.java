@@ -5,7 +5,12 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.hashset;
+
+import java2.util2.Collection;
+import java2.util2.Set;
+
+
 
 /**
  * <p>Hash table and linked list implementation of the <tt>Set</tt> interface,
@@ -94,7 +99,7 @@ package java2.util2;
  * @see     Hashtable
  * @since   1.4
  */
-public class LinkedHashSet extends HashSet implements Set, Cloneable, java.io.Serializable {
+public class LinkedHashSet extends java2.util2.hashset.HashSet implements Set, Cloneable, java.io.Serializable {
   /**
    * Constructs a new, empty linked hash set with the specified initial
    * capacity and load factor.

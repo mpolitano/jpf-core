@@ -17,7 +17,7 @@ public class TreeSetDriverAdd {
 		int scope=maxScope;
 		int maxLength=Verify.getInt(0,scope);
 		TreeSet l = new TreeSet();
-		for (int i=0; i<=maxLength; i++){
+		for (int i=1; i<=maxLength; i++){
 			try{
 				switch (Verify.random(0)){
 					case 0:

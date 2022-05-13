@@ -9,3 +9,4 @@ coverage.include=*.LinkedList
 coverage.show_methods=true
 coverage.show_bodies=false
 search.class = .search.heuristic.BFSHeuristic
+methods.include=java2.util2.linkedlist.LinkedList.addBefore,java2.util2.linkedlist.LinkedList.add,java2.util2.linkedlist.LinkedList.<init>

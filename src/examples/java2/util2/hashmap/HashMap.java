@@ -276,7 +276,7 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
   /**
    * Returns index for hash code h.
    */
-  static int indexFor(int h, int length) {
+  protected static int indexFor(int h, int length) {
     return h & (length - 1);
   }
 

@@ -7,6 +7,8 @@
 
 package java2.util2.treeset;
 import java2.util2.*;
+import java2.util2.treemap.TreeMap;
+
 /**
  * This class implements the <tt>Set</tt> interface, backed by a
  * <tt>TreeMap</tt> instance.  This class guarantees that the sorted set will
@@ -475,7 +477,7 @@ public class TreeSet extends AbstractSet implements SortedSet, Cloneable, java.i
     // Read in size
     int size = s.readInt();
 
-    ((TreeMap) m).readTreeSet(size, s, PRESENT);
+    // ((TreeMap) m).readTreeSet(size, s, PRESENT);
   }
 
   private static final long serialVersionUID = -2479143000061671589L;

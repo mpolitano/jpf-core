@@ -8,6 +8,7 @@
 package java2.util2.hashset;
 import java2.util2.*;
 import java2.util2.hashmap.HashMap;
+import java2.util2.hashmap.LinkedHashMap;
 
 /**
  * This class implements the <tt>Set</tt> interface, backed by a hash table

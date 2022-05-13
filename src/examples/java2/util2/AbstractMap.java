@@ -600,7 +600,7 @@ public abstract class AbstractMap implements Map {
    * This should be made public as soon as possible.  It greately simplifies
    * the task of implementing Map.
    */
-  static class SimpleEntry implements Entry {
+  public static class SimpleEntry implements Entry {
     Object key;
     Object value;
 

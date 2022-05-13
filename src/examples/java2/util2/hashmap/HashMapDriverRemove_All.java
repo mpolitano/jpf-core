@@ -18,7 +18,7 @@ public class HashMapDriverRemove_All {
 		int scope=maxScope;
 		int maxLength=Verify.getInt(0,scope);
 		HashMap h = new HashMap();
-		for (int i=0; i<=maxLength; i++){
+		for (int i=1; i<=maxLength; i++){
 			try{	
 				switch (Verify.random(7)){
 					case 0:

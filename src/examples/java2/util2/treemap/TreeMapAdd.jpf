@@ -5,9 +5,8 @@ target = java2.util2.treemap.TreeMapDriverAdd
 listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
 
 
-coverage.include=*.TreeMap,*.TreeSet
+coverage.include=*.TreeMap
 coverage.show_methods=true
 coverage.show_bodies=false
-coverage.loaded_only=true
 search.class = .search.heuristic.BFSHeuristic
-coverage.methods=true
+methods.include=java2.util2.treemap.TreeMap.put,java2.util2.treemap.TreeMap.incrementSize,java2.util2.treemap.TreeMap.Entry.Entry,java2.util2.treemap.TreeMap.compare,java2.util2.treemap.TreeMap.Entry.setValue,java2.util2.treemap.TreeMap.fixAfterInsertion,java2.util2.treemap.TreeMap.parentOf,java2.util2.treemap.TreeMap.leftOf,java2.util2.treemap.TreeMap.rightOf,java2.util2.treemap.TreeMap.colorOf,java2.util2.treemap.TreeMap.setColor,java2.util2.treemap.TreeMap.rotateLeft,java2.util2.treemap.TreeMap.rotateRight,java2.util2.treemap.TreeMap.<init>

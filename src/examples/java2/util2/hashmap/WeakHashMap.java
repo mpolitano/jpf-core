@@ -5,9 +5,23 @@
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
-package java2.util2;
+package java2.util2.hashmap;
 
 import java.lang.ref.WeakReference;
+
+import java2.util2.AbstractCollection;
+import java2.util2.AbstractMap;
+import java2.util2.AbstractSet;
+import java2.util2.ArrayList;
+import java2.util2.Collection;
+import java2.util2.ConcurrentModificationException;
+import java2.util2.Iterator;
+import java2.util2.Map;
+import java2.util2.NoSuchElementException;
+import java2.util2.Set;
+import java2.util2.AbstractMap.SimpleEntry;
+import java2.util2.Map.Entry;
+
 import java.lang.ref.ReferenceQueue;
 
 /**
