@@ -4,13 +4,13 @@ for p in $projects
 	do
 		for c in $class 
 		do
-			for d in $driver 
+			for s in $scope 
 			do
-				for s in $scope 
+				for d in $driver 
 				do
 					echo "========== SCOPE $s =================" >> result.txt
 	                changeScope $s
-	                java -jar build/RunJPF.jar src/examples/$p/$c/$d.jpf >> result.txt
+	                java -jar -Xmx8g build/RunJPF.jar src/examples/$p/$c/$d.jpf >> result.txt
 				done
 			done
 		done
@@ -21,12 +21,12 @@ for p in $projects
 function changeScope(){
 	#Warning;
 	pushd src/examples/java2/util2/
-        find ./ -type f -exec sed -i 's/\bscope=[0-9]/scope='$1'/g' {} \;
+        find ./ -type f -exec sed -i 's/\bscope=\([0-9]\)\+/cope='$1'/g' {} \;
     popd
 	ant
 }
 
-scope="1"
+scope="1 2 3 4 5 6 7 8 9 10 11"
 # class=$3
 # driver=$4
 # projects=$2

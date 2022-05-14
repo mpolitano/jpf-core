@@ -19,7 +19,7 @@ public class TreeMapDriverAdd_All {
 		for (int i=1; i<=maxLength; i++){
 			try{
 
-				switch (Verify.random(10)){
+				switch (Verify.random(11)){
 					case 0:
 						l.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
 						break;
@@ -53,6 +53,10 @@ public class TreeMapDriverAdd_All {
 					case 10:
 						l.tailMap(Verify.getInt(0,scope));
 						break;
+					case 11: 
+						l.putAll(l);
+						break;
+
 				}
      		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException|java.lang.IllegalArgumentException e){
 			}

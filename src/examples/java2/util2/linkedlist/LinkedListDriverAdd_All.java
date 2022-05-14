@@ -19,7 +19,7 @@ public class LinkedListDriverAdd_All {
 		LinkedList l = new LinkedList();
 		for (int i=1; i<=maxLength; i++){
 			try{
-				switch (Verify.random(7)){
+				switch (Verify.random(8)){
 					case 0:
 						// System.out.println("adding...");
 						l.add(Verify.getInt(0,scope));
@@ -58,6 +58,11 @@ public class LinkedListDriverAdd_All {
 					case 7:
 						// System.out.println("rmF...");
 						l.clear();
+						// assert l.repOK();
+						break;
+					case 8:
+						// System.out.println("rmF...");
+						l.addAll(l);
 						// assert l.repOK();
 						break;
 	

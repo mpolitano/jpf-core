@@ -24,8 +24,13 @@ public class HashMapDriverRemove {
 					case 0:
 						// System.out.println("adding...");
 						h.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-						// assert l.repOK();	
-						break;		
+						// assert l.repOK();		
+						break;	
+					case 1:
+						// System.out.println("adding...");
+						h.remove(Verify.getInt(0,scope));
+						// assert l.repOK();		
+						break;	
 					}
 			}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 			

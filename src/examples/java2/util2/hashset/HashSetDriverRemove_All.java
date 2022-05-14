@@ -20,11 +20,11 @@ public class HashSetDriverRemove_All {
     HashSet h = new HashSet();
     for (int i=1; i<=maxLength; i++){
       try{  
-        switch (Verify.random(3)){
+        switch (Verify.random(6)){
           case 0:
             h.add(Verify.getInt(0,scope));
-            // assert l.repOK();    
-            break;
+            // assert l.repOK();  
+            break;    
           case 1:
             h.remove(Verify.getInt(0,scope));
             // assert l.repOK();      
@@ -35,6 +35,15 @@ public class HashSetDriverRemove_All {
             break;
           case 3:
             h.contains(Verify.getInt(0,scope));
+            break;
+          case 4:
+            h.iterator();
+            break;
+          case 5:
+            h.size();
+            break;
+          case 6:
+            h.clone();
             break;
         }
       }catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){

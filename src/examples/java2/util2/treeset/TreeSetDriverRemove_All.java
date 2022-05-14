@@ -19,7 +19,7 @@ public class TreeSetDriverRemove_All {
 		TreeSet l = new TreeSet();
 		for (int i=1; i<=maxLength; i++){
 			try{
-				switch (Verify.random(7)){
+				switch (Verify.random(8)){
 					case 0:
 						l.add(Verify.getInt(0,scope));
 						break;
@@ -42,6 +42,12 @@ public class TreeSetDriverRemove_All {
  						break;		
 					case 7:
  						l.clear();
+ 						break;
+ 					case 8:
+ 						l.addAll(l);
+ 						break;
+ 					 case 9:
+ 						l.clone();
  						break;
 				}
 

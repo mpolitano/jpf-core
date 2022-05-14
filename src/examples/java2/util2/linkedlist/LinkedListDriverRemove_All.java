@@ -12,6 +12,7 @@ import java2.util2.*;
 
 public class LinkedListDriverRemove_All {
 
+
 	private static LinkedList generateStructure(int maxScope) {
 
 		int scope=maxScope;
@@ -19,7 +20,7 @@ public class LinkedListDriverRemove_All {
 		LinkedList l = new LinkedList();
 		for (int i=1; i<=maxLength; i++){
 			try{
-				switch (Verify.random(7)){
+				switch (Verify.random(8)){
 					case 0:
 						// System.out.println("adding...");
 						l.add(Verify.getInt(0,scope));
@@ -60,6 +61,11 @@ public class LinkedListDriverRemove_All {
 						l.clear();
 						// assert l.repOK();
 						break;
+					case 8:
+						// System.out.println("rmF...");
+						l.addAll(l);
+						// assert l.repOK();
+						break;
 	
 				}											
      		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
@@ -68,6 +74,7 @@ public class LinkedListDriverRemove_All {
 		}
 		return l;
 	}
+
 
 	public static void main(String[] args) {
 		int scope=1;

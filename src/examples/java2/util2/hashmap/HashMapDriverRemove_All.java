@@ -13,14 +13,14 @@ import java2.util2.*;
 
 public class HashMapDriverRemove_All {
 
-		private static HashMap generateStructure(int maxScope) {
+	private static HashMap generateStructure(int maxScope) {
 
 		int scope=maxScope;
 		int maxLength=Verify.getInt(0,scope);
 		HashMap h = new HashMap();
 		for (int i=1; i<=maxLength; i++){
 			try{	
-				switch (Verify.random(7)){
+				switch (Verify.random(11)){
 					case 0:
 						h.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
 						break;
@@ -52,7 +52,18 @@ public class HashMapDriverRemove_All {
 					case 7:
 						h.containsKey(Verify.getInt(0,scope));
 						break;
-
+					case 8:
+						h.get(Verify.getInt(0,scope));
+						break;
+					case 9:
+						h.putAll(h);
+						break;
+					case 10:
+						h.clone();
+						break;
+					case 11:
+						h.toString();
+						break;
 				}
      		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 			
