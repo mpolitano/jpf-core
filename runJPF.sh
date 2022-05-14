@@ -21,7 +21,7 @@ for p in $projects
 function changeScope(){
 	#Warning;
 	pushd src/examples/java2/util2/
-        find ./ -type f -exec sed -i 's/\bscope=\([0-9]\)\+/cope='$1'/g' {} \;
+        find ./ -type f -exec sed -i 's/\bscope=\([0-9]\)\+/scope='$1'/g' {} \;
     popd
 	ant
 }
