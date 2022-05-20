@@ -29,7 +29,6 @@ public class HashMapDriverRemove {
 			break;
 		}
 		int maxLength=Verify.getInt(0,scope);
-		HashMap h = new HashMap();
 		for (int i=1; i<=maxLength; i++){
 			try{	
 				switch (Verify.random(0)){
