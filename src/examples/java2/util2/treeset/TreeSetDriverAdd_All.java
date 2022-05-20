@@ -8,7 +8,6 @@
 package java2.util2.treeset;
 
 import gov.nasa.jpf.vm.Verify;
-import java2.util2.*;
 
 public class TreeSetDriverAdd_All {
 
@@ -19,35 +18,49 @@ public class TreeSetDriverAdd_All {
 		TreeSet l = new TreeSet();
 		for (int i=1; i<=maxLength; i++){
 			try{
-				switch (Verify.random(8)){
+				switch (Verify.random(10)){
 					case 0:
 						l.add(Verify.getInt(0,scope));
+						l.repOK();
 						break;
 					case 1:
 						l.contains(Verify.getInt(0,scope));
+						l.repOK();
 						break;
 					case 2:
 						l.size();
+						l.repOK();
 					case 3:
 						l.remove(Verify.getInt(0,scope));
+						l.repOK();
 						break;
 					case 4:
  						l.headSet(Verify.getInt(0,scope));
+						l.repOK();
  						break;
 					case 5:
  						l.tailSet(Verify.getInt(0,scope));
+						l.repOK();
  						break;	
 					case 6:
  						l.subSet(Verify.getInt(0,scope),Verify.getInt(0,scope));
+						l.repOK();
  						break;		
 					case 7:
  						l.clear();
+						l.repOK();
  						break;
  					case 8:
- 						l.addAll(l);
+ 						l.first();
+						l.repOK();
  						break;
  					 case 9:
  						l.clone();
+						l.repOK();
+ 						break;
+ 					 case 10:
+ 						l.last();
+						l.repOK();
  						break;
 				}
 
@@ -63,6 +76,8 @@ public class TreeSetDriverAdd_All {
 
 		TreeSet tree= generateStructure(scope);
 		tree.add(Verify.getInt(0,scope));
+		tree.repOK();
+
 	
 	}
 

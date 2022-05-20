@@ -16,11 +16,10 @@ public class HashMapDriverAdd_All {
 	private static HashMap generateStructure(int maxScope) {
 
 		int scope=maxScope;
-		int maxLength=Verify.getInt(0,scope);
 		HashMap h = null;
 		switch (Verify.random(3)){
 		case 0:
-			h = new HashMap(Verify.getInt(0,scope),Verify.getInt(0,scope));
+			h = new HashMap(Verify.getInt(0,scope),Verify.getInt(1,scope));
 			break;
 		case 1:
 			h = new HashMap(Verify.getInt(0,scope));
@@ -29,6 +28,8 @@ public class HashMapDriverAdd_All {
 			h = new HashMap();
 			break;
 		}
+		int maxLength=Verify.getInt(0,scope);
+
 		for (int i=1; i<=maxLength; i++){
 			try{	
 				switch (Verify.random(14)){

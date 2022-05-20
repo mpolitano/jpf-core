@@ -1142,6 +1142,142 @@ public class TreeMap extends AbstractMap implements SortedMap, Cloneable, java.i
     public String toString() {
       return key + "=" + value;
     }
+    
+    
+    public boolean consistency()
+    {
+        return wellConnected(null) && redConsistency() && blackConsistency() && ordered();
+    }
+    boolean ordered() {
+        return ordered(this,new Range());
+    }
+    boolean ordered(Entry t, Range range) {
+        if(t == null) {
+            return true;
+        }
+        if(!range.inRange((Integer)t.key)) {
+            return false;
+        }
+        boolean ret=true;
+        ret = ret && ordered(t.left,range.setUpper((Integer)t.key));
+        ret = ret && ordered(t.right,range.setLower((Integer)t.key));
+        return ret;
+    }
+    int size() {
+        int ls=0,rs=0;
+        if(left!=null) {
+            ls=left.size();
+        }
+        if(right!=null) {
+            rs=right.size();
+        }
+        return 1+ls+rs;
+    }
+    /**
+     * Returns true iff this tree is well-connected.
+     */
+
+    public boolean wellConnected(Entry expectedParent) {
+        boolean ok = true;
+        if (expectedParent != parent) {
+
+            return false;
+        }
+        
+        if (right != null) {
+            //ok && is redundant because ok is assigned true
+            ok = ok && right.wellConnected(this);
+        }
+        
+        if (left != null) {
+            
+            ok = ok && left.wellConnected(this);
+        }
+        
+        if(right==left && right!=null && left!=null) {//left!=null is redundant because left==right && right!=null
+            return false;
+        }
+        
+        return ok;
+    }
+
+    /**
+     * Returns true if no red node in subtree has red children
+     * 
+     * @post returns true if no red node in subtree has red children
+     */
+    protected boolean redConsistency() {
+        boolean ret = true;
+        if (color == TreeMap.RED
+                && ((left != null && left.color == TreeMap.RED) || (right != null && right.color == TreeMap.RED)))
+            return false;
+        if (left != null) {
+            ret = ret && left.redConsistency();
+        }
+        if (right != null) {
+            ret = ret && right.redConsistency();
+        }
+        return ret;
+    }
+
+    /**
+     * Returns the black height of this subtree.
+     * 
+     * @pre
+     * @post returns the black height of this subtree
+     */
+    protected int blackHeight() {
+        int ret = 0;
+        if (color == TreeMap.BLACK) {
+            ret = 1;
+        }
+        if (left != null) {
+            ret += left.blackHeight();
+        }
+        return ret;
+    }
+
+    /**
+     * Returns true if black properties of tree are correct
+     * 
+     * @post returns true if black properties of tree are correct
+     */
+    protected boolean blackConsistency() {
+
+        if (color != TreeMap.BLACK) // root must be black
+        {
+            return false;
+        }
+        // the number of black nodes on way to any leaf must be same
+        if (!consistentlyBlackHeight(blackHeight())) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Checks to make sure that the black height of tree is height
+     * 
+     * @post checks to make sure that the black height of tree is height
+     */
+    protected boolean consistentlyBlackHeight(int height) {
+        boolean ret = true;
+        if (color == TreeMap.BLACK)
+            height--;
+        if (left == null) {
+            ret = ret && (height == 0);
+        } else {
+            ret = ret && (left.consistentlyBlackHeight(height));
+        }
+        if (right == null) {
+            ret = ret && (height == 0);
+        } else {
+            ret = ret && (right.consistentlyBlackHeight(height));
+        }
+
+        return ret;
+    }
+    
   }
 
   /**
@@ -1581,103 +1717,118 @@ public class TreeMap extends AbstractMap implements SortedMap, Cloneable, java.i
     for (int m = sz - 1; m >= 0; m = m / 2 - 1) level++;
     return level;
   }
-	public boolean repOK() {
-		if (root == null)
-			return true;
-		return repOK_Structure() && repOK_Colors() && isOrdered();
+	
+//Repok of juanma 
+//public boolean repOK() {
+//		if (root == null)
+//			return true;
+//		return repOK_Structure() && repOK_Colors() && isOrdered();
+//	}
+//
+//	public boolean repOK_Structure() {
+//		HashSet<Entry> visited = new HashSet<Entry>();
+//		LinkedList<Entry> worklist = new LinkedList<Entry>();
+//		visited.add(root);
+//		worklist.add(root);
+//		if (root.parent != null)
+//			return false;
+//
+//		while (!worklist.isEmpty()) {
+//			Entry node = worklist.removeFirst();
+//			Entry left = node.left;
+//			if (left != null) {
+//				if (!visited.add(left))
+//					return false;
+//				if (left.parent != node)
+//					return false;
+//				worklist.add(left);
+//			}
+//			Entry right = node.right;
+//			if (right != null) {
+//				if (!visited.add(right))
+//					return false;
+//				if (right.parent != node)
+//					return false;
+//				worklist.add(right);
+//			}
+//		}
+//		return visited.size() == size;
+//	}
+//
+//	public boolean repOK_Colors() {
+//		if (root.color != BLACK)
+//			return false;
+//		LinkedList<Entry> worklist = new LinkedList<Entry>();
+//		worklist.add(root);
+//		while (!worklist.isEmpty()) {
+//			Entry current = worklist.removeFirst();
+//			Entry cl = current.left;
+//			Entry cr = current.right;
+//			if (current.color == RED) {
+//				if (cl != null && cl.color == RED)
+//					return false;
+//				if (cr != null && cr.color == RED)
+//					return false;
+//			}
+//			if (cl != null)
+//				worklist.add(cl);
+//			if (cr != null)
+//				worklist.add(cr);
+//		}
+//		int numberOfBlack = -1;
+//		LinkedList<Pair<Entry, Integer>> worklist2 = new LinkedList<Pair<Entry, Integer>>();
+//		worklist2.add(new Pair<Entry, Integer>(root, 0));
+//		while (!worklist2.isEmpty()) {
+//			Pair<Entry, Integer> p = worklist2.removeFirst();
+//			Entry e = p.first();
+//			int n = p.second();
+//			if (e != null && e.color == BLACK)
+//				n++;
+//			if (e == null) {
+//				if (numberOfBlack == -1)
+//					numberOfBlack = n;
+//				else if (numberOfBlack != n)
+//					return false;
+//			} else {
+//				worklist2.add(new Pair<Entry, Integer>(e.left, n));
+//				worklist2.add(new Pair<Entry, Integer>(e.right, n));
+//			}
+//		}
+//		return true;
+//	}
+//
+//	private boolean isOrdered() {
+//		return isOrdered(root, null, null);
+//	}
+//
+//	private boolean isOrdered(Entry n, Integer min, Integer max) {
+//		if ((Integer)n.key == -1)
+//			return false;
+//
+//		if ((min != null && (Integer)n.key <= (min)) || (max != null && (Integer)n.key >= (max)))
+//			return false;
+//
+//		if (n.left != null)
+//			if (!isOrdered(n.left, (Integer)min,(Integer) n.key))
+//				return false;
+//		if (n.right != null)
+//			if (!isOrdered(n.right, (Integer)n.key, (Integer)max))
+//				return false;
+//		return true;
+//	}
+  
+  //RepOK kiasan beapi
+  public boolean repOK() {
+		return (root == null || root.consistency()) && size == realSize();
 	}
 
-	public boolean repOK_Structure() {
-		HashSet<Entry> visited = new HashSet<Entry>();
-		LinkedList<Entry> worklist = new LinkedList<Entry>();
-		visited.add(root);
-		worklist.add(root);
-		if (root.parent != null)
-			return false;
-
-		while (!worklist.isEmpty()) {
-			Entry node = worklist.removeFirst();
-			Entry left = node.left;
-			if (left != null) {
-				if (!visited.add(left))
-					return false;
-				if (left.parent != node)
-					return false;
-				worklist.add(left);
-			}
-			Entry right = node.right;
-			if (right != null) {
-				if (!visited.add(right))
-					return false;
-				if (right.parent != node)
-					return false;
-				worklist.add(right);
-			}
-		}
-		return visited.size() == size;
-	}
-
-	public boolean repOK_Colors() {
-		if (root.color != BLACK)
-			return false;
-		LinkedList<Entry> worklist = new LinkedList<Entry>();
-		worklist.add(root);
-		while (!worklist.isEmpty()) {
-			Entry current = worklist.removeFirst();
-			Entry cl = current.left;
-			Entry cr = current.right;
-			if (current.color == RED) {
-				if (cl != null && cl.color == RED)
-					return false;
-				if (cr != null && cr.color == RED)
-					return false;
-			}
-			if (cl != null)
-				worklist.add(cl);
-			if (cr != null)
-				worklist.add(cr);
-		}
-		int numberOfBlack = -1;
-		LinkedList<Pair<Entry, Integer>> worklist2 = new LinkedList<Pair<Entry, Integer>>();
-		worklist2.add(new Pair<Entry, Integer>(root, 0));
-		while (!worklist2.isEmpty()) {
-			Pair<Entry, Integer> p = worklist2.removeFirst();
-			Entry e = p.first();
-			int n = p.second();
-			if (e != null && e.color == BLACK)
-				n++;
-			if (e == null) {
-				if (numberOfBlack == -1)
-					numberOfBlack = n;
-				else if (numberOfBlack != n)
-					return false;
-			} else {
-				worklist2.add(new Pair<Entry, Integer>(e.left, n));
-				worklist2.add(new Pair<Entry, Integer>(e.right, n));
-			}
-		}
-		return true;
-	}
-
-	private boolean isOrdered() {
-		return isOrdered(root, null, null);
-	}
-
-	private boolean isOrdered(Entry n, Integer min, Integer max) {
-		if ((Integer)n.key == -1)
-			return false;
-
-		if ((min != null && (Integer)n.key <= (min)) || (max != null && (Integer)n.key >= (max)))
-			return false;
-
-		if (n.left != null)
-			if (!isOrdered(n.left, (Integer)min,(Integer) n.key))
-				return false;
-		if (n.right != null)
-			if (!isOrdered(n.right, (Integer)n.key, (Integer)max))
-				return false;
-		return true;
-	}
+  private int realSize() {
+      if(root==null) {
+          return 0;
+      }
+      return root.size();
+  }
+  
 
 	private class Pair<T, U> {
 		private T a;

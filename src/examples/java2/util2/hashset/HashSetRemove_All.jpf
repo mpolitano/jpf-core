@@ -8,5 +8,4 @@ listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
 coverage.include=*.HashSet,java2.util2.hashmap.HashMap
 coverage.show_methods=true
 coverage.show_bodies=false
-search.class = .search.heuristic.BFSHeuristic
 methods.include=java2.util2.hashset.HashSet.remove,java2.util2.hashmap.HashMap.remove,java2.util2.hashmap.HashMap.maskNull,java2.util2.hashmap.HashMap.hash,java2.util2.hashmap.HashMap.indexFor,java2.util2.hashmap.HashMap.eq,java2.util2.hashmap.HashMap.removeEntryForKey,java2.util2.hashset.HashSet.<init>

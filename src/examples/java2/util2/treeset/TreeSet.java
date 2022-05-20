@@ -479,6 +479,12 @@ public class TreeSet extends AbstractSet implements SortedSet, Cloneable, java.i
 
     // ((TreeMap) m).readTreeSet(size, s, PRESENT);
   }
+  
+  public boolean repOK() {
+	  if (m == null)
+		  return false;
+	  return ((TreeMap) m).repOK();
+  }
 
   private static final long serialVersionUID = -2479143000061671589L;
 }

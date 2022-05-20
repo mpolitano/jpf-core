@@ -23,8 +23,9 @@ public class TreeSetDriverAdd {
 					case 0:
 						// System.out.println("adding...");
 						l.add(Verify.getInt(0,scope));
+						 assert l.repOK();			
+
 						break;
-						// assert l.repOK();			
 				}
 			}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 			}			
@@ -37,7 +38,8 @@ public class TreeSetDriverAdd {
 
 		TreeSet tree= generateStructure(scope);
 		tree.add(Verify.getInt(0,scope));
-	
+		tree.repOK();
+
 	}
 
 

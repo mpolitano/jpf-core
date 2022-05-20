@@ -16,8 +16,19 @@ public class HashSetDriverRemove {
   private static HashSet generateStructure(int maxScope) {
 
     int scope=maxScope;
+    HashSet h = null;
+    switch (Verify.random(3)){
+ 		case 0:
+ 			h = new HashSet(Verify.getInt(0,scope),Verify.getInt(1,scope));
+ 			break;
+ 		case 1:
+ 			h = new HashSet(Verify.getInt(0,scope));
+ 			break;
+ 		case 2:
+ 			h = new HashSet();
+ 			break;
+    	}
     int maxLength=Verify.getInt(0,scope);
-    HashSet h = new HashSet();
     for (int i=1; i<=maxLength; i++){
       try{  
         switch (Verify.random(0)){

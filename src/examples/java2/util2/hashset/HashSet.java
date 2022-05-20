@@ -276,4 +276,11 @@ public class HashSet extends AbstractSet implements Set, Cloneable, java.io.Seri
 //      map.put(e, PRESENT);
 //    }
 //  }
+  
+  public boolean repOK() {
+	if (map == null)
+		return false;
+	return map.repOK();
+  }
+  
 }
