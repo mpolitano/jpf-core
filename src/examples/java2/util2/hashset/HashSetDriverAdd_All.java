@@ -78,8 +78,9 @@ public class HashSetDriverAdd_All {
 
     HashSet tree= generateStructure(scope);
     tree.add(Verify.getInt(0,scope));
+    try {
     assert tree.repOK();  
-
+    }catch(java.lang.IndexOutOfBoundsException e) {}
   }
 
 

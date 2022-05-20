@@ -1041,6 +1041,7 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
 		HashSet<Entry> visited = new HashSet<Entry>();
 
 		for (int i = 0; i < DEFAULT_INITIAL_CAPACITY; i++)
+//			if(table.length)
 			if (!isLL(table[i], visited))
 				return false;
 

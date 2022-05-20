@@ -88,10 +88,6 @@ public class HashMapDriverRemove_All {
 						h.hashCode();
 						assert h.repOK();			
 						break;
-					case 14:
-						h.hashCode();
-						assert h.repOK();			
-						break;
 				}
      		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 			
@@ -107,10 +103,10 @@ public class HashMapDriverRemove_All {
 		try {		
 			// assert tree.repOK();
 			tree.remove(Verify.getInt(0,scope));
-			
+			assert tree.repOK();			
+
      	}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 		}
-		assert tree.repOK();			
 
 		
 	}

@@ -88,10 +88,6 @@ public class HashMapDriverAdd_All {
 						h.hashCode();
 						assert h.repOK();			
 						break;
-					case 14:
-						h.hashCode();
-						assert h.repOK();			
-						break;
 				}
      		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 			
@@ -105,7 +101,9 @@ public class HashMapDriverAdd_All {
 
 		HashMap hashmap= generateStructure(scope);
 		hashmap.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-		assert hashmap.repOK();			
+		try { 
+			assert hashmap.repOK();		
+		}catch(java.lang.ArrayIndexOutOfBoundsException e) {}
 
 		
 	}

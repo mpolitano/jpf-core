@@ -56,10 +56,11 @@ public class HashMapDriverRemove {
 		HashMap tree= generateStructure(scope);
 		try{
 			tree.remove(Verify.getInt(0,scope));
+			 assert tree.repOK();		
+
      	}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 			
 		}
-		 assert tree.repOK();		
 
 	}
 

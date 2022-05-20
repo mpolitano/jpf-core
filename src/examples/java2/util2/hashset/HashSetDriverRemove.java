@@ -50,6 +50,7 @@ public class HashSetDriverRemove {
     try{
       HashSet tree= generateStructure(scope);
       tree.remove(Verify.getInt(0,scope));
+      tree.repOK();
     }catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
       
     }
