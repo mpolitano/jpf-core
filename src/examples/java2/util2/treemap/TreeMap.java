@@ -6,6 +6,9 @@
  */
 
 package java2.util2.treemap;
+import java.util.HashSet;
+import java.util.LinkedList;
+
 import java2.util2.*;
 /**
  * Red-Black tree based implementation of the <tt>SortedMap</tt> interface.
@@ -1578,4 +1581,119 @@ public class TreeMap extends AbstractMap implements SortedMap, Cloneable, java.i
     for (int m = sz - 1; m >= 0; m = m / 2 - 1) level++;
     return level;
   }
+	public boolean repOK() {
+		if (root == null)
+			return true;
+		return repOK_Structure() && repOK_Colors() && isOrdered();
+	}
+
+	public boolean repOK_Structure() {
+		HashSet<Entry> visited = new HashSet<Entry>();
+		LinkedList<Entry> worklist = new LinkedList<Entry>();
+		visited.add(root);
+		worklist.add(root);
+		if (root.parent != null)
+			return false;
+
+		while (!worklist.isEmpty()) {
+			Entry node = worklist.removeFirst();
+			Entry left = node.left;
+			if (left != null) {
+				if (!visited.add(left))
+					return false;
+				if (left.parent != node)
+					return false;
+				worklist.add(left);
+			}
+			Entry right = node.right;
+			if (right != null) {
+				if (!visited.add(right))
+					return false;
+				if (right.parent != node)
+					return false;
+				worklist.add(right);
+			}
+		}
+		return visited.size() == size;
+	}
+
+	public boolean repOK_Colors() {
+		if (root.color != BLACK)
+			return false;
+		LinkedList<Entry> worklist = new LinkedList<Entry>();
+		worklist.add(root);
+		while (!worklist.isEmpty()) {
+			Entry current = worklist.removeFirst();
+			Entry cl = current.left;
+			Entry cr = current.right;
+			if (current.color == RED) {
+				if (cl != null && cl.color == RED)
+					return false;
+				if (cr != null && cr.color == RED)
+					return false;
+			}
+			if (cl != null)
+				worklist.add(cl);
+			if (cr != null)
+				worklist.add(cr);
+		}
+		int numberOfBlack = -1;
+		LinkedList<Pair<Entry, Integer>> worklist2 = new LinkedList<Pair<Entry, Integer>>();
+		worklist2.add(new Pair<Entry, Integer>(root, 0));
+		while (!worklist2.isEmpty()) {
+			Pair<Entry, Integer> p = worklist2.removeFirst();
+			Entry e = p.first();
+			int n = p.second();
+			if (e != null && e.color == BLACK)
+				n++;
+			if (e == null) {
+				if (numberOfBlack == -1)
+					numberOfBlack = n;
+				else if (numberOfBlack != n)
+					return false;
+			} else {
+				worklist2.add(new Pair<Entry, Integer>(e.left, n));
+				worklist2.add(new Pair<Entry, Integer>(e.right, n));
+			}
+		}
+		return true;
+	}
+
+	private boolean isOrdered() {
+		return isOrdered(root, null, null);
+	}
+
+	private boolean isOrdered(Entry n, Integer min, Integer max) {
+		if ((Integer)n.key == -1)
+			return false;
+
+		if ((min != null && (Integer)n.key <= (min)) || (max != null && (Integer)n.key >= (max)))
+			return false;
+
+		if (n.left != null)
+			if (!isOrdered(n.left, (Integer)min,(Integer) n.key))
+				return false;
+		if (n.right != null)
+			if (!isOrdered(n.right, (Integer)n.key, (Integer)max))
+				return false;
+		return true;
+	}
+
+	private class Pair<T, U> {
+		private T a;
+		private U b;
+
+		public Pair(T a, U b) {
+			this.a = a;
+			this.b = b;
+		}
+
+		public T first() {
+			return a;
+		}
+
+		public U second() {
+			return b;
+		}
+	}
 }

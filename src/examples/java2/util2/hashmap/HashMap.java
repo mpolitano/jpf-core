@@ -8,6 +8,8 @@
 package java2.util2.hashmap;
 
 import java.io.*;
+import java.util.HashSet;
+
 import java2.util2.*;
 
 //import java2.util2.Map.Entry;
@@ -1022,6 +1024,29 @@ public class HashMap extends AbstractMap implements Map, Cloneable, Serializable
 
 	  buf.append("}");
 	  return buf.toString();
+	  
+	  
   }
-  
+	private boolean isLL(Entry e, HashSet<Entry> visited) {
+		Entry current = e;
+		while (current != null) {
+			if (!visited.add(current))
+				return false;
+			current = current.next;
+		}
+		return true;
+	}
+
+	public boolean repOK() {
+		HashSet<Entry> visited = new HashSet<Entry>();
+
+		for (int i = 0; i < DEFAULT_INITIAL_CAPACITY; i++)
+			if (!isLL(table[i], visited))
+				return false;
+
+		if (visited.size() != size || size >= threshold)
+			return false;
+
+		return true;
+	}
 }

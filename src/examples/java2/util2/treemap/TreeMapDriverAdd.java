@@ -36,7 +36,7 @@ public class TreeMapDriverAdd {
 		int scope=1;
 			TreeMap tree= generateStructure(scope);
 			tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-			// assert tree.repOK();
+			 assert tree.repOK();
 
 	}
 

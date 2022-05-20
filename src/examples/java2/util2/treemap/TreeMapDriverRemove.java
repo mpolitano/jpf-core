@@ -38,7 +38,7 @@ public class TreeMapDriverRemove {
 		TreeMap tree= generateStructure(scope);
 		try {
 			tree.remove(Verify.getInt(0,scope));
-			// assert tree.repOK();
+			 assert tree.repOK();
 
      	}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 		}
