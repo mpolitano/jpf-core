@@ -10,7 +10,7 @@ for p in $projects
 				do
 					echo "========== SCOPE $s =================" >> result.txt
 	                changeScope $s
-	                java -jar -Xmx8g build/RunJPF.jar src/examples/$p/$c/$d.jpf >> result.txt
+	                java -jar  build/RunJPF.jar src/examples/$p/$c/$d.jpf >> result.txt
 				done
 			done
 		done
@@ -27,6 +27,7 @@ function changeScope(){
 }
 
 scope="1 2 3 4 5 6 7 8 9 10 11"
+#scope=1
 # class=$3
 # driver=$4
 # projects=$2
@@ -59,8 +60,8 @@ runJPF
 
 class=hashmap
 driver="HashMapAdd_All  HashMapRemove_All HashMapAdd HashMapRemove"
-runJPF
+#runJPF
 
 class=hashset
 driver="HashSetAdd_All  HashSetRemove_All HashSetAdd HashSetRemove"
-runJPF
+#runJPF
