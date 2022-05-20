@@ -1,3 +1,5 @@
+import gov.nasa.jpf.vm.Verify;
+
 /*
  * Copyright (C) 2014, United States Government, as represented by the
  * Administrator of the National Aeronautics and Space Administration.
@@ -67,7 +69,6 @@ public class TestExample {
 
 
     T2 t2 = new T2();
-
     assert t2.computeSomething(42, 42) == 1.0;
   }
 }

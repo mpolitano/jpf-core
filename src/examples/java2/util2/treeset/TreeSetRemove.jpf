@@ -1,0 +1,10 @@
+
+target = java2.util2.treeset.TreeSetDriverRemove
+
+
+listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
+
+
+coverage.include=*.TreeSet,*.TreeMap
+coverage.show_methods=true
+methods.include=java2.util2.treeset.TreeSet.remove,java2.util2.treeset.TreeSet.<init>,java2.util2.treemap.TreeMap.remove,java2.util2.treemap.TreeMap.decrementSize,java2.util2.treemap.TreeMap.Entry.Entry,java2.util2.treemap.TreeMap.deleteEntry,java2.util2.treemap.TreeMap.compare,java2.util2.treemap.TreeMap.getEntry,java2.util2.treemap.TreeMap.successor,java2.util2.treemap.TreeMap.fixAfterDeletion,java2.util2.treemap.TreeMap.parentOf,java2.util2.treemap.TreeMap.leftOf,java2.util2.treemap.TreeMap.rightOf,java2.util2.treemap.TreeMap.colorOf,java2.util2.treemap.TreeMap.setColor,java2.util2.treemap.TreeMap.rotateLeft,java2.util2.treemap.TreeMap.rotateRight,java2.util2.treemap.TreeMap.<init>

@@ -1,0 +1,12 @@
+
+target = java2.util2.linkedlist.LinkedListDriverAdd
+
+
+listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
+
+
+coverage.include=*.LinkedList
+coverage.show_methods=true
+coverage.show_bodies=false
+methods.include=java2.util2.linkedlist.LinkedList.addBefore,java2.util2.linkedlist.LinkedList.add,java2.util2.linkedlist.LinkedList.<init>
+

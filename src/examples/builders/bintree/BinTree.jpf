@@ -1,0 +1,7 @@
+target = builders.bintree.BinTreeDriverRepOK
+
+listener=.listener.SearchStats,.listener.CoverageAnalyzer
+
+coverage.include = builders.BinTree
+coverage.show_methods = true
+coverage.show_bodies = false

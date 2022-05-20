@@ -1,0 +1,5 @@
+@using statecomparator
+
+target=SimpleExample2
+listener+=;gov.nasa.jpf.vm.NumericValueBounder;
+#search.depth_limit=100

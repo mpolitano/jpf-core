@@ -1,0 +1,13 @@
+
+target = builders.schedule.ScheduleDriverRepOK_all
+
+
+listener=.listener.CoverageAnalyzer,.listener.StateSpaceDot
+
+
+coverage.include=*.Schedule
+coverage.show_methods=true
+search.class = .search.heuristic.BFSHeuristic
+
+
+

@@ -440,6 +440,8 @@ public class CoverageAnalyzer extends ListenerAdapter implements PublisherExtens
       this.className = className;
     }
 
+
+
     void setLoaded(ClassInfo ci) {
       if (methods == null) {
         this.ci = ci;
@@ -450,8 +452,14 @@ public class CoverageAnalyzer extends ListenerAdapter implements PublisherExtens
         for (MethodInfo mi : ci.getDeclaredMethodInfos()) {
           // <2do> what about MJI methods? we should report why we don't cover them
           if (!mi.isNative() && !mi.isAbstract()) {
-            MethodCoverage mc = new MethodCoverage(mi);
-            methods.put(mi, mc);
+        	//Mariano
+        	  String nameMethod = ci.getName()+"."+mi.getName();
+        	  if (StringSetMatcher.isMatch(nameMethod, methodsCoverageIncludes, methodsCoverageExclude)){
+        		  MethodCoverage mc = new MethodCoverage(mi);
+                  methods.put(mi, mc);
+        	  }
+//        	if(CoverageAnalyzer.methods.)
+           
           }
         }
       }
@@ -569,8 +577,16 @@ public class CoverageAnalyzer extends ListenerAdapter implements PublisherExtens
 
   StringSetMatcher includes = null; //  means all
   StringSetMatcher excludes = null; //  means none
+  static StringSetMatcher methodsCoverageIncludes = null; //  means none
+  static StringSetMatcher methodsCoverageExclude = null; //  means none
+
+  String[] coverageMethodsInclude = null; //  means none
+
+
   StringSetMatcher loaded;
   static boolean loadedOnly; // means we only check loaded classes that are not filtered
+  static boolean methods; // means we only check loaded classes that are not filtered
+
   static boolean showMethods;      // do we want to show per-method coverage?
   static boolean showMethodBodies;
   static boolean excludeHandlers;  // do we count the handlers in? (off-nominal CF)
@@ -581,6 +597,7 @@ public class CoverageAnalyzer extends ListenerAdapter implements PublisherExtens
   public CoverageAnalyzer(Config conf, JPF jpf) {
     includes = StringSetMatcher.getNonEmpty(conf.getStringArray("coverage.include"));
     excludes = StringSetMatcher.getNonEmpty(conf.getStringArray("coverage.exclude"));
+    methodsCoverageIncludes = StringSetMatcher.getNonEmpty(conf.getStringArray("methods.include"));
 
     showMethods = conf.getBoolean("coverage.show_methods", false);
     showMethodBodies = conf.getBoolean("coverage.show_bodies", false);
@@ -588,10 +605,18 @@ public class CoverageAnalyzer extends ListenerAdapter implements PublisherExtens
     showBranchCoverage = conf.getBoolean("coverage.show_branches", true);
     loadedOnly = conf.getBoolean("coverage.loaded_only", true);
     showRequirements = conf.getBoolean("coverage.show_requirements", false);
+    
+    coverageMethodsInclude =  conf.getStringArray("coverage.methods.include");
 
     if (!loadedOnly) {
       getCoverageCandidates(); // this might take a little while
     }
+    
+//    if (coverageMethodsInclude.length>0) {
+//    	for (String p:coverageMethodsInclude) {
+//    		this.addClassEntry(p);
+//    	}
+//    }
 
     jpf.addPublisherExtension(ConsolePublisher.class, this);
   }

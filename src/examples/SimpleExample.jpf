@@ -1,0 +1,8 @@
+@using statecomparator
+
+target=SimpleExample
+
+#listener+=;gov.nasa.jpf.vm.NumericValueBounder;
+#range.vars=x
+#range.x.var=SimpleExample.main:iTest
+#range.x.max=1002
