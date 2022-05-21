@@ -19,15 +19,17 @@ public class HashMapDriverAdd {
 		HashMap h = null;
 		switch (Verify.random(3)){
 		case 0:
-			h = new HashMap(Verify.getInt(0,scope),Verify.getInt(1,scope));
+			h = new HashMap(Verify.getInt(1,scope),Verify.getInt(1,scope));
 			break;
 		case 1:
-			h = new HashMap(Verify.getInt(0,scope));
+			h = new HashMap(Verify.getInt(1,scope));
 			break;
 		case 2:
 			h = new HashMap();
 			break;
 		}
+		h = new HashMap();
+
 		int maxLength=Verify.getInt(0,scope);
 
 		for (int i=1; i<=maxLength; i++){
@@ -35,7 +37,7 @@ public class HashMapDriverAdd {
 				switch (Verify.random(0)){
 					case 0:
 						// System.out.println("adding...");
-						h.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
+					h.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
 						 assert h.repOK();		
 						break;	
 					case 1:
@@ -52,13 +54,13 @@ public class HashMapDriverAdd {
 	}
 
 	public static void main(String[] args) {
-		int scope=2;
+		int scope=1;
 
 		HashMap tree= generateStructure(scope);
-		tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-		try { 
-		assert tree.repOK();		
-		}catch(java.lang.ArrayIndexOutOfBoundsException e) {}
+//		tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
+//		try { 
+//		assert tree.repOK();		
+//		}catch(java.lang.ArrayIndexOutOfBoundsException e) {}
 
 	}
 

@@ -19,15 +19,16 @@ public class HashMapDriverAdd_All {
 		HashMap h = null;
 		switch (Verify.random(3)){
 		case 0:
-			h = new HashMap(Verify.getInt(0,scope),Verify.getInt(1,scope));
+			h = new HashMap(Verify.getInt(1,scope),Verify.getInt(1,scope));
 			break;
 		case 1:
-			h = new HashMap(Verify.getInt(0,scope));
+			h = new HashMap(Verify.getInt(1,scope));
 			break;
 		case 2:
 			h = new HashMap();
 			break;
 		}
+		h = new HashMap();
 		int maxLength=Verify.getInt(0,scope);
 
 		for (int i=1; i<=maxLength; i++){

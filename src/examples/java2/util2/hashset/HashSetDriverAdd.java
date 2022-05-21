@@ -19,10 +19,10 @@ public class HashSetDriverAdd {
     HashSet h = null;
     switch (Verify.random(3)){
  		case 0:
- 			h = new HashSet(Verify.getInt(0,scope),Verify.getInt(1,scope));
+ 			h = new HashSet(Verify.getInt(1,scope),Verify.getInt(1,scope));
  			break;
  		case 1:
- 			h = new HashSet(Verify.getInt(0,scope));
+ 			h = new HashSet(Verify.getInt(1,scope));
  			break;
  		case 2:
  			h = new HashSet();
