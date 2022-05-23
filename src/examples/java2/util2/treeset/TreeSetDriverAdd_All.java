@@ -21,46 +21,35 @@ public class TreeSetDriverAdd_All {
 				switch (Verify.random(10)){
 					case 0:
 						l.add(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 1:
 						l.contains(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 2:
 						l.size();
-						l.repOK();
 					case 3:
 						l.remove(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 4:
  						l.headSet(Verify.getInt(0,scope));
-						l.repOK();
  						break;
 					case 5:
  						l.tailSet(Verify.getInt(0,scope));
-						l.repOK();
  						break;	
 					case 6:
  						l.subSet(Verify.getInt(0,scope),Verify.getInt(0,scope));
-						l.repOK();
  						break;		
 					case 7:
  						l.clear();
-						l.repOK();
  						break;
  					case 8:
  						l.first();
-						l.repOK();
  						break;
  					 case 9:
  						l.clone();
-						l.repOK();
  						break;
  					 case 10:
  						l.last();
-						l.repOK();
  						break;
 				}
 
@@ -76,7 +65,7 @@ public class TreeSetDriverAdd_All {
 
 		TreeSet tree= generateStructure(scope);
 		tree.add(Verify.getInt(0,scope));
-		tree.repOK();
+		assert tree.repOK();
 
 	
 	}

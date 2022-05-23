@@ -33,10 +33,10 @@ public class TreeMapDriverAdd {
 	}
 
 	public static void main(String[] args) {
-		int scope=1;
-			TreeMap tree= generateStructure(scope);
-			tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-			 assert tree.repOK();
+		int scope=3;
+		TreeMap tree= generateStructure(scope);
+		tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
+		assert tree.repOK();
 
 	}
 

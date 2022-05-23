@@ -16,25 +16,13 @@ public class HashSetDriverAdd {
   private static HashSet generateStructure(int maxScope) {
 
     int scope=maxScope;
-    HashSet h = null;
-    switch (Verify.random(3)){
- 		case 0:
- 			h = new HashSet(Verify.getInt(1,scope),Verify.getInt(1,scope));
- 			break;
- 		case 1:
- 			h = new HashSet(Verify.getInt(1,scope));
- 			break;
- 		case 2:
- 			h = new HashSet();
- 			break;
-    	}
+    HashSet h = new HashSet();
     int maxLength=Verify.getInt(0,scope);
     for (int i=1; i<=maxLength; i++){
       try{  
         switch (Verify.random(0)){
           case 0:
             h.add(Verify.getInt(0,scope));
-            assert h.repOK();      
             break;
 
         }
@@ -47,13 +35,9 @@ public class HashSetDriverAdd {
 
   public static void main(String[] args) {
     int scope=1;
-
     HashSet tree= generateStructure(scope);
     tree.add(Verify.getInt(0,scope));
-
-    try {
-        assert tree.repOK();  
-        }catch(java.lang.IndexOutOfBoundsException e) {}
+    assert tree.repOK();
   }
 
 

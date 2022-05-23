@@ -20,66 +20,45 @@ public class TreeMapDriverRemove_All {
 		for (int i=1; i<=maxLength; i++){
 			try{
 
-				switch (Verify.random(14)){
+				switch (Verify.random(11)){
 					case 0:
 						l.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 1:
 						l.containsKey(Verify.getInt(0,scope));
-						l.repOK();
 						break;						
 					case 2:
 						l.size();
-						l.repOK();
 						break;
 					case 3:
 						l.containsValue(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 4:
 						l.get(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 5:
 						l.remove(Verify.getInt(0,scope));
-						l.repOK();
 						break;						
 					case 6:
 						l.clear();
-						l.repOK();
 						break;
 					case 7:
 						l.keySet();
-						l.repOK();
 						break;
 					case 8:
 						l.subMap(Verify.getInt(0,scope),Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 9:
 						l.headMap(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 10:
 						l.tailMap(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 11: 
-						l.hashCode();
-						l.repOK();
-						break;
-					case 13: 
 						l.values();
-						l.repOK();
 						break;
-					case 14: 
-						l.get(Verify.getInt(0,scope));
-						l.repOK();
-						break;
-
 				}
-     		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException|java.lang.IllegalArgumentException e){
+			}catch(java2.util2.NoSuchElementException|java.lang.IllegalArgumentException|java.util.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 			}
 		
 		}
@@ -87,12 +66,11 @@ public class TreeMapDriverRemove_All {
 	}
 
 	public static void main(String[] args) {
-		int scope=1;
+		int scope=3;
 		TreeMap tree= generateStructure(scope);
 		try {
 			tree.remove(Verify.getInt(0,scope));
-			 assert tree.repOK();
-
+			assert tree.repOK();
      	}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 		}
 

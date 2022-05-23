@@ -11,7 +11,7 @@ import gov.nasa.jpf.vm.Verify;
 import java2.util2.*;
 
 public class TreeSetDriverRemove {
-
+	
 	private static TreeSet generateStructure(int maxScope) {
 
 		int scope=maxScope;
@@ -19,12 +19,14 @@ public class TreeSetDriverRemove {
 		TreeSet l = new TreeSet();
 		for (int i=1; i<=maxLength; i++){
 			try{
-				switch (Verify.random(0)){
+				switch (Verify.random(1)){
 					case 0:
 						// System.out.println("adding...");
 						l.add(Verify.getInt(0,scope));
-						 assert l.repOK();			
-
+						break;
+					case 1:
+						// System.out.println("adding...");
+						l.remove(Verify.getInt(0,scope));
 						break;
 				}
 			}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
@@ -39,9 +41,9 @@ public class TreeSetDriverRemove {
 
 		try{
 			tree.remove(Verify.getInt(0,scope));
+			assert tree.repOK();
      	}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 		}
-		tree.repOK();
 	}
 
 

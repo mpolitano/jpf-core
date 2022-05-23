@@ -22,7 +22,6 @@ public class LinkedListDriverRemove {
 				switch (Verify.random(0)){
 					case 0:
 						l.add(Verify.getInt(0,scope));
-						// assert l.repOK();
 						break;			
 			
 				}	
@@ -38,11 +37,10 @@ public class LinkedListDriverRemove {
 		LinkedList list= generateStructure(scope);
 		try{
 			list.remove(Verify.getInt(0,scope));
-			// assert list.repOK();
+			assert list.repOK();
      	}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 
 		}
-		assert list.repOK();
 
 	}
 

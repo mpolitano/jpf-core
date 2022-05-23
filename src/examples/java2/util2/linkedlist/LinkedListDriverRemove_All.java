@@ -24,47 +24,38 @@ public class LinkedListDriverRemove_All {
 					case 0:
 						// System.out.println("adding...");
 						l.add(Verify.getInt(0,scope));
-						 assert l.repOK();
 						break;
 					case 1:
 						// System.out.println("addF...");
 						l.addFirst(Verify.getInt(0,scope));
-						 assert l.repOK();
 						break;
 					case 2:
 						// System.out.println("rm...");
 						l.remove(Verify.getInt(0,scope));
-						 assert l.repOK();
 						break;	
 					case 3:
 						// System.out.println("rmF...");
 						l.removeFirst();
-						 assert l.repOK();
 						break;
 					case 4:
 						// System.out.println("rmF...");
 						l.set(Verify.getInt(0,scope),Verify.getInt(0,scope));
-						 assert l.repOK();
 						break;
 					case 5:
 						// System.out.println("rmF...");
 						l.removeLast();
-						 assert l.repOK();
 						break;
 					case 6:
 						// System.out.println("rmF...");
 						l.addLast(Verify.getInt(0,scope));
-						 assert l.repOK();	
 						break;
 					case 7:
 						// System.out.println("rmF...");
 						l.clear();
-						 assert l.repOK();
 						break;
 					case 8:
 						// System.out.println("rmF...");
 						l.get(Verify.getInt(0,scope));
-						 assert l.repOK();
 						break;
 	
 				}											
@@ -81,11 +72,10 @@ public class LinkedListDriverRemove_All {
 		LinkedList list= generateStructure(scope);
 		try{
 			list.remove(Verify.getInt(0,scope));
-			// assert list.repOK();
+			assert list.repOK();
      	}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 
 		}
-		assert list.repOK();
 	
 	}
 

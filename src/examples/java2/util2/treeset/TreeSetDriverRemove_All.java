@@ -21,47 +21,36 @@ private static TreeSet generateStructure(int maxScope) {
 			switch (Verify.random(10)){
 				case 0:
 					l.add(Verify.getInt(0,scope));
-					l.repOK();
 					break;
 				case 1:
 					l.contains(Verify.getInt(0,scope));
-					l.repOK();
 					break;
 				case 2:
 					l.size();
-					l.repOK();
 				case 3:
 					l.remove(Verify.getInt(0,scope));
-					l.repOK();
 					break;
 				case 4:
-						l.headSet(Verify.getInt(0,scope));
-					l.repOK();
-						break;
+					l.headSet(Verify.getInt(0,scope));
+					break;
 				case 5:
-						l.tailSet(Verify.getInt(0,scope));
-					l.repOK();
-						break;	
+					l.tailSet(Verify.getInt(0,scope));
+					break;	
 				case 6:
-						l.subSet(Verify.getInt(0,scope),Verify.getInt(0,scope));
-					l.repOK();
-						break;		
+					l.subSet(Verify.getInt(0,scope),Verify.getInt(0,scope));
+					break;		
 				case 7:
-						l.clear();
-					l.repOK();
-						break;
-					case 8:
-						l.first();
-					l.repOK();
-						break;
-					 case 9:
-						l.clone();
-					l.repOK();
-						break;
-					 case 10:
-						l.last();
-					l.repOK();
-						break;
+					l.clear();
+					break;
+				case 8:
+					l.first();
+					break;
+				 case 9:
+					l.clone();
+					break;
+				 case 10:
+					l.last();
+					break;
 			}
 
  		}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException|java.lang.IllegalArgumentException e){
@@ -73,9 +62,10 @@ private static TreeSet generateStructure(int maxScope) {
 
 	public static void main(String[] args) {
 		int scope=1;
+		TreeSet tree= generateStructure(scope);
 		try{
-			TreeSet tree= generateStructure(scope);
 			tree.remove(Verify.getInt(0,scope));
+			assert tree.repOK();
      	}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
 		}
 	}

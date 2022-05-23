@@ -14,7 +14,6 @@ public class LinkedListDriverAdd{
 				switch (Verify.random(0)){
 					case 0:
 						l.add(Verify.getInt(0,scope));
-						assert l.repOK();
 						break;			
 			
 				}	
@@ -30,10 +29,8 @@ public class LinkedListDriverAdd{
 		int scope=1;
 		LinkedList list= generateStructure(scope);
 		// System.out.println("List"+ list);
-
 		list.add(Verify.getInt(0,scope));
 		// System.out.println("List 2"+ list);
-
 		assert list.repOK();
 
 	}

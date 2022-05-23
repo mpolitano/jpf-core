@@ -16,31 +16,18 @@ public class HashMapDriverRemove {
 	private static HashMap generateStructure(int maxScope) {
 
 		int scope=maxScope;
-		HashMap h = null;
-		switch (Verify.random(3)){
-		case 0:
-			h = new HashMap(Verify.getInt(1,scope),Verify.getInt(1,scope));
-			break;
-		case 1:
-			h = new HashMap(Verify.getInt(1,scope));
-			break;
-		case 2:
-			h = new HashMap();
-			break;
-		}
+		HashMap h = new HashMap();
 		int maxLength=Verify.getInt(0,scope);
 		for (int i=1; i<=maxLength; i++){
 			try{	
-				switch (Verify.random(0)){
+				switch (Verify.random(1)){
 					case 0:
 						// System.out.println("adding...");
 						h.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-						 assert h.repOK();		
 						break;	
 					case 1:
 						// System.out.println("adding...");
 						h.remove(Verify.getInt(0,scope));
-						 assert h.repOK();		
 						break;	
 					}
 			}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
@@ -52,7 +39,6 @@ public class HashMapDriverRemove {
 
 	public static void main(String[] args) {
 		int scope=2;
-
 		HashMap tree= generateStructure(scope);
 		try{
 			tree.remove(Verify.getInt(0,scope));

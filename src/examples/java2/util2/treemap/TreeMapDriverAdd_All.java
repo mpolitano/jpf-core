@@ -22,59 +22,45 @@ public class TreeMapDriverAdd_All {
 				switch (Verify.random(14)){
 					case 0:
 						l.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 1:
 						l.containsKey(Verify.getInt(0,scope));
-						l.repOK();
 						break;						
 					case 2:
 						l.size();
-						l.repOK();
 						break;
 					case 3:
 						l.containsValue(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 4:
 						l.get(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 5:
 						l.remove(Verify.getInt(0,scope));
-						l.repOK();
 						break;						
 					case 6:
 						l.clear();
-						l.repOK();
 						break;
 					case 7:
 						l.keySet();
-						l.repOK();
 						break;
 					case 8:
 						l.subMap(Verify.getInt(0,scope),Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 9:
 						l.headMap(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 10:
 						l.tailMap(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 					case 11: 
 						l.hashCode();
-						l.repOK();
 						break;
 					case 13: 
 						l.values();
-						l.repOK();
 						break;
 					case 14: 
 						l.get(Verify.getInt(0,scope));
-						l.repOK();
 						break;
 
 				}
@@ -86,10 +72,10 @@ public class TreeMapDriverAdd_All {
 	}
 
 	public static void main(String[] args) {
-		int scope=1;
-			TreeMap tree= generateStructure(scope);
-			tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
-			 assert tree.repOK();
+		int scope=3;
+		TreeMap tree= generateStructure(scope);
+		tree.put(Verify.getInt(0,scope),Verify.getInt(0,scope));
+	 	assert tree.repOK();
 	}
 
 
