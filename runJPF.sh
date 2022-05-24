@@ -1,4 +1,9 @@
-
+dir=./results-jpf/
+tmpfile="processresults.csv.tmp"
+tmpfilebuilders="builders.txt"
+[[ -f $tmpfile ]] && rm $tmpfile
+[[ -f $tmpfilebuilders ]] && rm $tmpfilebuilders
+mkdir ./results-jpf/
 function runJPF(){
 for p in $projects
 	do
@@ -8,9 +13,14 @@ for p in $projects
 			do
 				for d in $driver 
 				do
-					echo "========== SCOPE $s =================" >> result.txt
+					resultsdir=$dir/$p/$c/$d/$s/
+					if [[ -d $resultsdir ]]; then
+  						 rm -rf $resultsdir
+					fi
+					mkdir -p $resultsdir
+					echo "========== SCOPE $s =================" >> $resultsdir/result.txt
 	                changeScope $s
-	                java -jar  build/RunJPF.jar src/examples/$p/$c/$d.jpf >> result.txt
+	                timeout 120m java -jar  build/RunJPF.jar src/examples/$p/$c/$d.jpf >> $resultsdir/result.txt
 				done
 			done
 		done
@@ -27,8 +37,8 @@ function changeScope(){
 ./gradlew compileExamplesJava
 }
 
-scope="1 2 3 4 5 6 7 8 9 10 11"
-#scope=1
+scope="1 2 3 4 5 6 7"
+# scope=1
 # class=$3
 # driver=$4
 # projects=$2
@@ -61,8 +71,8 @@ runJPF
 
 class=hashmap
 driver="HashMapAdd_All  HashMapRemove_All HashMapAdd HashMapRemove"
-#runJPF
+runJPF
 
 class=hashset
 driver="HashSetAdd_All  HashSetRemove_All HashSetAdd HashSetRemove"
-#runJPF
+runJPF
