@@ -19,10 +19,14 @@ public class TreeSetDriverAdd {
 		TreeSet l = new TreeSet();
 		for (int i=1; i<=maxLength; i++){
 			try{
-				switch (Verify.random(0)){
+				switch (Verify.random(1)){
 					case 0:
 						// System.out.println("adding...");
 						l.add(Verify.getInt(0,scope));
+						break;
+					case 1:
+						// System.out.println("adding...");
+						l.remove(Verify.getInt(0,scope));
 						break;
 				}
 			}catch(java2.util2.NoSuchElementException|java.lang.IndexOutOfBoundsException e){
@@ -32,7 +36,7 @@ public class TreeSetDriverAdd {
 	}
 
 	public static void main(String[] args) {
-		int scope=1;
+		int scope=6;
 
 		TreeSet tree= generateStructure(scope);
 		tree.add(Verify.getInt(0,scope));
